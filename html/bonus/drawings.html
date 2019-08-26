@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,12 @@
     <script src="../../js/vue.js"></script>
     <title>提现</title>
     <style>
-        *{
+        * {
             margin: 0;
         }
-        
-      
     </style>
 </head>
+
 <body>
     <div class="app">
         <div class="drawingsBox">
@@ -23,8 +23,8 @@
             <div class="">提现金额</div>
             <div class="sum">
                 <div style="flex: 1;">￥</div>
-                <div style="flex: 4;"><input type="text" placeholder="最低可提现100元"></div>
-                <div style="flex: 1;" class="blue">全部</div>
+                <div style="flex: 4;"><input type="text" v-model='isall' placeholder="最低可提现100元"></div>
+                <div style="flex: 1;" class="blue" @click='all'>全部</div>
             </div>
 
             <div class="card" v-if='card.length'>
@@ -36,9 +36,9 @@
             <div class="card" v-else>
                 <div style="flex: 1;">银行卡</div>
                 <div style="flex: 4;" class="gray">暂无绑定银行卡</div>
-                <div style="flex: 1;" class="blue" @click="binding">绑定</div> 
+                <div style="flex: 1;" class="blue" @click="binding">绑定</div>
             </div>
-            
+
             <div class="owner" v-if='card.length'>
                 <div>持卡人</div>
                 <div class="gray userid">{{card[0].userid}}</div>
@@ -46,72 +46,80 @@
         </div>
         <div class="apply" @click='apply'>提交申请</div>
         <div class="record" @click='record'>提现记录</div>
-       <div class="isModal" @click="shut" v-if='show'>
-        
-       </div>
-       <div class="modal" v-if='show'>
-        <div class="modalTitle">选择到账银行卡</div>
-        <div class="isCard" v-for="(item,index) in isCard">
-            <div class="circle"><img :src="item.icon" alt=""></div>
-            <div class="">{{item.cardMark}}</div>
-            <div class="radios"><input type="radio" name="a" @click='pitchon(index)' :checked='item.checked'></div>
-            
+        <div class="isModal" @click="shut" v-if='show'>
+
         </div>
-        <div class="modalTitle silver" @click='add'>添加银行卡</div>
-        
-    </div>
+        <div class="modal" v-if='show'>
+            <div class="modalTitle">选择到账银行卡</div>
+            <div class="isCard" v-for="(item,index) in isCard">
+                <div class="circle"><img :src="item.icon" alt=""></div>
+                <div class="">{{item.cardMark}}</div>
+                <div class="radios"><input type="radio" name="a" @click='pitchon(index)' :checked='item.checked'></div>
+
+            </div>
+            <div class="modalTitle silver" @click='add'>添加银行卡</div>
+
+        </div>
     </div>
 </body>
+
+
 <script>
     var app = new Vue({
-        el:'.app',
-        data:{
-            card:[],
-            isCard:[
-                {id:1,userid:'张立',cardMark:'中国工商银行(5124)', icon:'../../image/bonus/gongshang.png',checked:false},
-                {id:2,userid:'张立',cardMark:'中国工商银行(8888)',icon:'../../image/bonus/gongshang.png',checked:true}
+        el: '.app',
+        data: {
+            card: [],
+            isall:'',
+            sall:'168,888.00',//总价钱
+            isCard: [
+                { id: 1, userid: '张立', cardMark: '中国工商银行(5124)', icon: '../../image/bonus/gongshang.png', checked: false },
+                { id: 2, userid: '张立', cardMark: '中国工商银行(8888)', icon: '../../image/bonus/gongshang.png', checked: true }
             ],
-            show:false
+            show: false
         },
-        created(){
-            for(var i=0;i<this.isCard.length;i++){
-                    if(this.isCard[i].checked==true){
-                        this.card[0]=this.isCard[i]
-                    }
-                } 
-        },
-        methods:{
-            add(){
-                this.show=false
-            },
-            shut(){
-                this.show=false
-            },
-            binding(){
-                this.show=true
-            },
-            pitchon(index){
-                // console.log(index)
-                this.card[0]=this.isCard[index]
-                // console.log(this.card)
-                this.show=false
-
-                for(var i=0;i<this.isCard.length;i++){
-                    this.isCard[i].checked=false
+        created() {
+            for (var i = 0; i < this.isCard.length; i++) {
+                if (this.isCard[i].checked == true) {
+                    this.card[0] = this.isCard[i]
                 }
-                this.isCard[index].checked=true
-                
-               
+            }
+        },
+        methods: {
+            add() {
+                this.show = false
             },
-            apply(){
+            shut() {
+                this.show = false
+            },
+            binding() {
+                this.show = true
+            },
+            pitchon(index) {
+                // console.log(index)
+                this.card[0] = this.isCard[index]
+                // console.log(this.card)
+                this.show = false
+
+                for (var i = 0; i < this.isCard.length; i++) {
+                    this.isCard[i].checked = false
+                }
+                this.isCard[index].checked = true
+
+
+            },
+            apply() {
                 console.log('提交申请')
             },
-            record(){
+            record() {
                 console.log('提现记录')
+            },
+            all(){
+                this.isall=this.sall
             }
 
 
         }
     })
 </script>
+
 </html>

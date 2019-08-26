@@ -35,6 +35,8 @@ html{
     border: none;
     background: none;
     outline: none;
+    color:#9597a6;
+    font-size: 0.9rem;
 }
 .apply{
     width: 90%;
@@ -91,7 +93,7 @@ html{
     background-color: #ffffff;
     position: fixed;
     bottom: 0;
-    border-radius: 0.5rem 0.5rem 0 0; 
+    border-radius: 0.9rem 0.9rem 0 0; 
     
 }
 .modalTitle{
