@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/bonus/withdrawalRecord.css">
+    <title>提现记录</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        
+    </style> 
+</head>
+<body>
+    <div class="app">
+       <div class="titleNav">
+           <div :class="indexNum==index?'active':''" v-for='(item,index) in titleNavlist' @click="change(index)">{{item}}</div>
+       </div>
+       <div class="ulList" v-if="arrlist.length">
+            <div class="liList" v-for='(item,index) in arrlist'>
+                <div class="titleName">
+                    <p>{{item.name}}</p>
+                    <p class="redText">¥{{item.pirce}}</p>
+                </div>
+                <div class="titleTest">
+                    <span>{{item.time}}</span>
+                    <span>{{item.tips}}</span>
+                </div>
+            </div>
+            <div class="nonimor">
+                    没有更多数据了
+            </div>
+       </div>
+       <div class="datalist" v-else>
+                暂无数据
+       </div>
+            
+    </div>
+</body>
+<script src="../../js/vue.js"></script>
+<script>
+    
+    var app = new Vue({
+        el:'.app',
+        data:{
+            titleNavlist:['审核中','已打款'],
+            indexNum:0,
+            arrlist:[],
+            pirceList:[
+                {id:1,name:'中国工商银行(5178)',pirce:'52425100.00',time:'2019.08.22 12:25',tips:'（未含税）'},
+                {id:1,name:'中国农业银行(5178)',pirce:'52425100.00',time:'2019.08.22 12:25',tips:'（未含税）'},
+                {id:1,name:'中国工商银行(5178)',pirce:'52425100.00',time:'2019.08.22 12:25',tips:'（未含税）'}
+            ],
+            listssss:[]
+
+        },
+        methods:{
+            change(index){
+                this.indexNum=index
+                if(index==0){
+                    this.arrlist=this.pirceList
+                }else if(index==1){
+                    this.arrlist=this.listssss
+                }
+            }
+        }
+    })
+</script>
+
+</html>

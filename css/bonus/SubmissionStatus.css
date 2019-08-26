@@ -1,0 +1,53 @@
+.boxContent{
+    margin: 2rem 0;
+    height: 11rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.navBox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.navIcon{
+    width: 5rem;
+    height: 5rem;
+    background: red;
+}
+.navBox h3{
+        color: #707070;
+        font-size: 1rem;
+}
+.centers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #707070;
+}
+.text{
+    width: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    color:#9597A6;
+    font-size: 0.9rem;
+    display: flex;
+}
+.contentCenter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.combackBtn{
+    width: 90%;
+    height: 2.5rem;
+    color: #fff;
+    font-size: 1rem;
+    background: #0090FA;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
