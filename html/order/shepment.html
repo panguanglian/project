@@ -64,7 +64,7 @@
                 </div>
                 
             </div>
-
+  
             <div class="content-neirong" v-for="(item,index) in shopAll">
                 <div class="dingdan-nub">
                     <p>订单号信息</p>
@@ -83,7 +83,7 @@
                 <p class="fontSize" >订单编号：{{age}} <span class="copy" @click='copy(age)'>复制</span></p>
                 <p class="fontSize" >下单时间：1321313</p>
             </div>
-
+            <!-- <img src="https://apimg.alipay.com/combo.png?d=cashier&t=GDB"> -->
             <div class="submitBtn">
                     确认发货
             </div>
@@ -113,6 +113,7 @@
                 
             },
             copy(age){
+                
                 var _input = document.createElement("input");
                 _input.value = age;
                 document.body.appendChild(_input);
