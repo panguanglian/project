@@ -1,0 +1,28 @@
+.shepment{
+    border-radius: 0.5rem;
+    
+}
+.logisticsText{
+    margin-top: 1rem;
+    width: 92%;
+    border-radius: 0.5rem;
+    padding: 1rem 0.8rem;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+.way{
+   height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.way p{
+    width: 78%;
+}
+.wayInput{
+    border: none;
+    outline: none;
+    width: 78%;
+}

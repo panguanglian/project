@@ -1,0 +1,103 @@
+.headerTitle{ 
+    width: 100%;
+    height: 5rem;
+    background: #0090FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+.boxthite{
+    
+    position: absolute;
+    bottom: 0;
+    width: 92%;
+    height: 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background: #fff;
+
+}
+.logisticsTest{
+    width: 92%;
+    padding: 1rem 0.8rem;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin-bottom: 1rem;
+
+}
+.logisticsTestcar{
+    margin-top:0.2rem; 
+    display: flex;
+    justify-content: space-between;
+}
+.logisticsTestcar>span{
+    width: 10%;
+}
+.logisticsTestcar .flexbuju{
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+.logisticsTestcar .flexbuju p{
+    margin-top: 0.2rem;
+}
+.logisticsTestcar div span{
+    color: #0090FA;
+}
+.logisticsTestcar>div .iconImg{
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+.time{
+    font-size: 0.7rem;
+    color: #707070
+}
+.testwuliu{
+    width: 90%;
+    font-size: 0.9rem;
+}
+.fontSize{
+    font-size: 0.7rem;
+    margin: 0.8rem 0;
+    color: #707070;
+}
+.allPirce{
+    margin-top: 1rem;
+    width: 92%;
+    padding: 1rem 0.8rem;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+}
+.listFlex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.listFlex p{
+    margin: 0.1rem 0;
+}
+.colorRed{
+    color: #FF4536;
+}
+.lineheight{
+    margin: 0.5rem 0;
+    height: 0.05rem;
+    background: #EBEBEB;
+}
+.submitBtn{
+    width: 92%;
+    height: 2.5rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background: #0090FA;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

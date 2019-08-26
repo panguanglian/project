@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/order/dingdan.css">
+    <link rel="stylesheet" href="../../css/order/orderDetails.css">
+    <link rel="stylesheet" href="../../css/order/shepment.css">
+    <script src="../../js/vue.js"></script>
+    <title>发货</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="content" >
+            <div class="logisticsText">
+                <div class="way">
+                     <span>配送方式</span>
+                     <p>宅急送</p>
+                </div>
+                <div class="way">
+                        <span>快递单号</span>
+                        <input type="text" placeholder="请输入快递单号" class="wayInput">
+                   </div>
+            </div>
+
+            <div class="logisticsTest shepment">
+                <div class="logisticsTestcar">
+                    <span>12</span>
+
+                    <div v-if="wuliu">
+                        <div class="flexbuju" >
+                                <div >
+                                        <p>[广州市]广州市海珠区的张伟[15321546214]正在派件</p>
+                                        <p class="time">2019.08.22 12:23:44</p>
+                                </div>
+                                <div class="iconImg">
+                                        1
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="testwuliu" v-else>
+                        <p >暂无物流信息</p>
+                    </div>
+                </div>
+
+                <div class="logisticsTestcar">
+                        <span>12</span>
+                            <div class="flexbuju" >
+                                <div >
+                                    <p>张立 13578542365</p>
+                                    <p class="time">地址：广东省广州市海珠区白蕉镇虹桥三
+                                            路金地格林伯乐</p>
+                                </div>
+                            </div>
+                </div>
+                
+            </div>
+
+            <div class="content-neirong" v-for="(item,index) in shopAll">
+                <div class="dingdan-nub">
+                    <p>订单号信息</p>
+                </div>
+                <div class="dingdan-zhan" v-for="(items,index) in item.ssss">
+                    <div class="product"></div>
+                    <div class="brief-introduction">
+                        <p class="one-text">{{items.name}}</p>
+                        <p class="two-text">{{items.titleTest}}</p>
+                        <div class="dingdan-zhan-text">
+                            <span class="text-nubmer">￥{{items.pirce}}</span>
+                            <span class="text-mul">×{{items.numders}}</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="fontSize" >订单编号：11313</p>
+                <p class="fontSize" >下单时间：1321313</p>
+            </div>
+
+            <div class="submitBtn">
+                    确认发货
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'.app',
+        data:{
+            shopAll:[
+                {id:1,title:'1233455324568456',status:'待发货',ssss:[{name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'},
+                {name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'}],img:'',userName:'嗷嗷喊',},
+            ],
+            indexNum:0,
+            wuliu:true,
+        },
+        created(){
+
+        },
+        methods:{
+            btnOrder(index){
+                this.indexNum=index
+                
+            }
+        }
+    })
+</script>
+</html>

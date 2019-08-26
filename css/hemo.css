@@ -1,0 +1,50 @@
+.content{
+    background-color: #ecebeb;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    padding: 0 0.5rem;
+}
+
+.content-one{
+    margin-top: 0.5rem;
+    width: 48%;
+    height: 15rem;
+    background-color: white;
+    padding: 0.45rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+.content-oneDiv{
+    width: 100%;
+    height: 70%;
+    background-color: tomato;
+}
+.text{
+    font-size: 0.05rem;
+    color: #858485;
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+    overflow: hidden;
+    margin: 0.2rem 0;
+}
+.text-content{
+    display: flex;
+    justify-content: space-between;
+}
+.text-nub{
+    font-size: 0.25rem;
+    color: #fa5a5a;
+}
+.text-hua{
+   
+    font-size: 0.1rem;
+    color: #858485;
+    text-decoration: line-through;
+}
+.text-biao{
+   
+    font-size: 0.05rem;
+    color: #fa5a5a;
+}

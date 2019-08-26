@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet" href="../css/pagination.css">
+    <link rel="stylesheet" href="../css/hemo.css">
+    <title>异业联盟客户端</title>
+    <style>
+        *{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- //轮播图 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> Slide1</div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+
+            <!-- 内容 -->
+            <div class="content">
+                    <div class="content-one">
+                        <div class="content-oneDiv"></div>
+                        <p class="text">中石化中石化中石化中石化中石化中石化丰富的顺丰到付发的都是</p>
+                        <div class="text-content">
+                            <p class="text-nub">￥730.00<span class="text-hua">￥6900</span></p>
+                            <p class="text-biao">￥</p>
+                        </div>
+                    </div>
+                    
+            </div>
+            
+    </div>
+</body>
+<script src="../js/swiper.js"></script>
+    <script src="../js/vue.js"></script>
+<script>
+    window.onload = function() {
+        var mySwiper = new Swiper('.swiper-container',{
+                autoplay : 4000,//可选选项，自动滑动
+                loop : true,//可选选项，开启循
+            pagination : '.pagination',
+        });  
+    }
+    var app = new Vue({
+        el:'.app',
+        data:{
+
+        },
+        methods:{
+
+        }
+    })
+</script>
+
+</html>
