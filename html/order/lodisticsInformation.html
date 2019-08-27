@@ -25,7 +25,7 @@
                     </div>
                     <div class="logisticssTest">
                         <p>宅急送</p>
-                        <span>4541654611646</span>
+                        <p>{{age}} <span class="copy" @click='copy(age)'>复制</span> </p>
                     </div>
                 </div>
                 <el-steps direction="vertical" :active="1">
@@ -44,13 +44,20 @@
     var app = new Vue({
         el:'.app',
         data:{
-            
+            age:'12',
         },
         created(){
 
         },
         methods:{
-            
+            copy(age){
+                var _input = document.createElement("input");
+                _input.value = age;
+                document.body.appendChild(_input);
+                _input.select();
+                document.execCommand("Copy");
+                document.body.removeChild(_input);
+            }
         }
     })
 </script>

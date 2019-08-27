@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="fontSize" >订单编号：11313</p>
+                <p class="fontSize" >订单编号：{{age}} <span class="copy" @click='copy(age)'>复制</span></p>
                 <p class="fontSize" >下单时间：1321313</p>
                 <p class="fontSize" >用户昵称：1456464</p>
                 <p class="fontSize" >配送方式：上门自提</p>
@@ -109,6 +109,7 @@
     var app = new Vue({
         el:'.app',
         data:{
+            age:'12',
             shopAll:[
                 {id:1,title:'1233455324568456',status:'待发货',ssss:[{name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'},
                 {name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'}],img:'',userName:'嗷嗷喊',},
@@ -123,6 +124,14 @@
             btnOrder(index){
                 this.indexNum=index
                 
+            },
+            copy(age){
+                var _input = document.createElement("input");
+                _input.value = age;
+                document.body.appendChild(_input);
+                _input.select();
+                document.execCommand("Copy");
+                document.body.removeChild(_input);
             }
         }
     })

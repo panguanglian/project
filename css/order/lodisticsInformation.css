@@ -22,7 +22,11 @@
     height:3rem;
 
 }
-.logisticssTest span{
+.logisticssTest p{
     font-size: 0.8rem;
     color: #9597A6;
+}
+.copy{
+    background: #F1F1F1;
+    padding:0 0.2rem;
 }
