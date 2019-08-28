@@ -46,10 +46,11 @@
         </div>
         <div class="apply" @click='apply'>提交申请</div>
         <div class="record" @click='record'>提现记录</div>
+        
         <div class="isModal" @click="shut" v-if='show'>
 
         </div>
-        <div class="modal" v-if='show'>
+        <div class="modal fadelogIn" v-if='show'>
             <div class="modalTitle">选择到账银行卡</div>
             <div class="isCard" v-for="(item,index) in isCard">
                 <div class="circle"><img :src="item.icon" alt=""></div>
@@ -69,8 +70,8 @@
         el: '.app',
         data: {
             card: [],
-            isall:'',
-            sall:'168,888.00',//总价钱
+            isall: '',
+            sall: '168,888.00',//总价钱
             isCard: [
                 { id: 1, userid: '张立', cardMark: '中国工商银行(5124)', icon: '../../image/bonus/gongshang.png', checked: false },
                 { id: 2, userid: '张立', cardMark: '中国工商银行(8888)', icon: '../../image/bonus/gongshang.png', checked: true }
@@ -113,8 +114,8 @@
             record() {
                 console.log('提现记录')
             },
-            all(){
-                this.isall=this.sall
+            all() {
+                this.isall = this.sall
             }
 
 

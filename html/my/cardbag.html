@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>卡包</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .cards{
+            width: 90%;
+            height: 5rem;
+            background-color: #f85252;
+            margin: 0 auto;
+            border-radius: 0.5rem;
+            line-height: 2.4rem;
+        }
+        .cards>div{
+            display: inline-block;
+        }
+        .logo{
+            width: 3rem;
+            height: 3rem;
+            background: #000;
+            border-radius: 50%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        .idCaer span{
+            
+            font-size: 1.35rem;
+            color: #ffffff;
+        }
+        .cards .info{
+            color: #ffffff;
+            width: 65%;
+        }
+        .cards .right{
+            float: right;
+        }
+        .usName span{
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="cardBag">
+            <div class="cards">
+                <div class="logo"></div>
+                <div class="info">
+                    <div class="usName">
+                        <span>中国工商银行</span>
+                        <span class="right">张立</span>
+                    </div>
+                    <div class="idCaer">
+                        <span>****</span><span>****</span><span>****</span><span class="right">5124</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</body>
+<script src="../../js/vue.js"></script>
+<script>
+   
+    var app = new Vue({
+        el:'.app',
+        data:{
+
+        },
+        methods:{
+
+        }
+    })
+</script>
+
+</html>
