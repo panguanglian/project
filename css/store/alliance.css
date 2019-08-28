@@ -1,5 +1,4 @@
 .content{
-    background-color: rgb(231, 227, 227);
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
