@@ -35,6 +35,9 @@
 .logisticsTestcar>span{
     width: 10%;
 }
+.logisticsP{
+    width: 90%;
+}
 .logisticsTestcar .flexbuju{
     font-size: 0.9rem;
     display: flex;
@@ -49,7 +52,7 @@
 .logisticsTestcar>div .iconImg{
     width: 10%;
     display: flex;
-    align-items: center;
+    align-items: center;justify-content: center;
 }
 .time{
     font-size: 0.7rem;
