@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的钱包</title>
+    <link rel="stylesheet" href="../../css/my/wallet.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="paquet">
+            <div class="paquetTitle">账户金额(元)</div>
+            <div class="monnaie">
+                <div>168,888.00</div>
+                <div class="right nav">></div>
+            </div>
+        </div>
+        <div class="cardBag">
+            <div class="cards" v-for='(item,index) in iscards' @click='isCards(index)'>
+                <div class="logo"></div>
+                <div class="info">
+                    <div class="usName">
+                        <div>{{item.Name}}</div>
+                        <div class="right">{{item.userName}}</div>
+                    </div>
+                    <div class="idCaer">
+                        <div>****</div>
+                        <div>****</div>
+                        <div>****</div>
+                        <div>{{item.caerNum}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="addCarb">添加银行卡</div>
+        </div>
+        <div class="isModal" @click="shut" v-if='show'>
+
+        </div>
+        <div class="modal fadelogIn" v-if='show'>
+            <div style="color: red;" @click='deletes'>删除</div>
+            <div @click='alter'>修改</div>
+
+        </div>
+        <div class="confirm" v-if='confirms'>
+            <div class="hint">确定删除改银行卡</div>
+            <div class="choice">
+                <div style="border-right: #d4d1d1 solid 0.05rem; color: #9597A6;" @click='shut'>否</div>
+                <div style="color: #0090FA;" @click='del'>是</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../../js/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {
+            isards:[],
+            cards: [
+                { id: 1, Name: '中国银行', userName: '张立', caerNum: '5124' },
+                { id: 2, Name: '中国工商银行', userName: '张立', caerNum: '5124' },
+                { id: 3, Name: '中国建设银行', userName: '张立', caerNum: '5124' }
+            ],
+            show: false,
+            subscript:'',
+            confirms:false
+        },
+        created() {
+            this.iscards=this.cards
+        },
+        mounted() {
+
+        },
+        methods: {
+            shut() {
+                this.show = false
+                this.confirms = false
+            },
+            isCards(index) {
+                this.show = true
+                this.subscript=index
+                console.log(index)
+            },
+            deletes(){
+                this.confirms = true
+            },
+            del(){
+                console.log(this.subscript)
+                
+                console.log(this.cards[this.subscript])
+                this.cards.splice(this.subscript,1)
+                console.log(this.cards)
+                this.iscards=this.cards
+                this.show = false
+                this.confirms = false
+            },
+            alter(){
+
+            }
+        }
+    })
+</script>
+
+</html>
