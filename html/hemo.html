@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/swiper.css">
     <link rel="stylesheet" href="../css/pagination.css">
     <link rel="stylesheet" href="../css/hemo.css">
+    <link rel="stylesheet" href="../css/iconFont/iconfont.css">
     <title>异业联盟户端</title>
     <style>
         *{
@@ -19,7 +20,7 @@
         <!-- //轮播图 -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"> Slide1</div>
+                    <div class="swiper-slide"> <img src="../image/timg.jpg" class="swiperimg"/></div>
                 </div>
                 <div class="pagination"></div>
             </div>
@@ -27,29 +28,30 @@
             <!-- 内容 -->
             <div class="content">
                     <div class="content-one">
-                        <div class="content-oneDiv"><img src="../image/zu100.png" alt=""></div>
+                        <div class="content-oneDiv">
+                                <svg class="icon iconfonts" aria-hidden="true">
+                                        <use xlink:href="#icon-xxx"></use>
+                                    </svg>
+                        </div>
                         <p class="text">中石化中石化中石化中石化中石化中石化丰富的顺丰到付发的都是</p>
                         <div class="text-content">
                             <p class="text-nub">￥730.00<span class="text-hua">￥6900</span></p>
-                            <p class="text-biao" @click='share'>￥</p>
+                            <p class="text-biao">
+                                <svg class="icon iconfonts" aria-hidden="true">
+                                        <use xlink:href="#iconfenxiang"></use>
+                                </svg>
+                        </p>
                         </div>
                     </div>
                     
             </div>
-            <div class="model" v-if='show' @click='hide'>
-                
-            </div>
-            <div class="modelInfo" v-if='show'>
-                <div class="friend" v-for='(item,index) in shares' @click='send'>
-                    <div class="icon"></div>
-                    <div>{{item.way}}</div>
-                </div>
-               
-            </div>
+            
     </div>
 </body>
-<script src="../js/swiper.js"></script>
 <script src="../js/vue.js"></script>
+<script src="../js/swiper.js"></script>
+<script src="../js/iconfont.js"></script>
+
 <script>
     window.onload = function() {
         var mySwiper = new Swiper('.swiper-container',{
@@ -61,23 +63,10 @@
     var app = new Vue({
         el:'.app',
         data:{
-            show:false,
-            shares:[
-                {way:'微信好友',icon:''},
-                {way:'朋友圈',icon:''},
-                {way:'QQ',icon:''},
-            ]
+
         },
         methods:{
-            share(){ //点击分享
-                this.show=true
-            },
-            hide(){ //隐藏模态框
-                this.show=false
-            },
-            send(){ //确定分享
-                this.show=false
-            }
+
         }
     })
 </script>

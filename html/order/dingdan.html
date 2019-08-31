@@ -66,12 +66,14 @@
             <div class="NullLcon">￥</div>
             <p class="NullLconWords">您暂时没有订单哦！</p >
         </div>
+        <div class="isModal" v-if='show'>
 
+        </div>
         <div class="confirm" v-if='confirms'>
-            <div class="hint">确定删除改银行卡</div>
+            <div class="hint">确定关闭本次订单？</div>
             <div class="choice">
-                <div style="border-right: #d4d1d1 solid 0.05rem; color: #9597A6;" @click='confirms = false'>否</div>
-                <div style="color: #0090FA;" @click='confirms = false'>是</div>
+                <div style="border-right: #d4d1d1 solid 0.05rem; color: #9597A6;" @click='confirms = false,show = false'>否</div>
+                <div style="color: #0090FA;" @click='confirms = false,show = false'>是</div>
             </div>
         </div>
 
@@ -94,7 +96,8 @@
                 {id:1,title:'1233455324568456',status:'待付款',ssss:[{name:'中化石油加油卡礼包',img:'../../image/zu100.png',titleTest:'内含一张1000元加油卡',pirce:'￥3455.00',numders:'2'},],imgs:'../../image/daffodil.jpg',userName:'嗷嗷喊',method:'关闭订单'},
             ],
             indexNum:0,
-            confirms:false
+            confirms:false,
+            show: false,
         },
         created(){
 
@@ -109,11 +112,13 @@
                 }
                 
             },
+            
             methodBtn(item){
                 if(item=='关闭订单'){
                     this.confirms=true
+                    this.show = true
                 }
-            }
+            },
         }
     })
 </script>

@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+}
+.cneterBox{
+    width: 92%;
+    padding:0.5rem 0.8rem ;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
+    
+    
+}
+.functions{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.7rem;
+}
+.functions span{
+    width: 25%;
+    color: #707070;
+}
+.functions .dingdan{
+    width: 50%
+}
+.functions .checkeds{
+    font-size: 0.5rem;
+    background: #F1F1F1;
+    text-align: center;
+}
+.dingdannum{
+    width: 75%;
+    text-align: left;
+}
+.imgbox{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    float:left;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+.imgbox img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+} 
