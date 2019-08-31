@@ -52,6 +52,16 @@
             </div>
 
         </div>
+        <div class="model" v-if='show' @click='hide'>
+                
+            </div>
+            <div class="modelInfo" v-if='show'>
+                <div class="friend" v-for='(item,index) in shares' @click='send'>
+                    <div class="icon"></div>
+                    <div>{{item.way}}</div>
+                </div>
+               
+            </div>
 
     </div>
 </body>
