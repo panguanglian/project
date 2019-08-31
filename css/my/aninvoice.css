@@ -1,0 +1,43 @@
+.aninvoice {
+    width: 86%;
+    padding: 4%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    margin-top: 4%;
+}
+
+.aninvoice>div {
+    margin-top: 2%;
+}
+
+.aninvoice>div div {
+    display: inline-block;
+}
+
+.aninvoice input {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+html {
+    background-color: #F1F1F1;
+}
+
+.invoiceBtn {
+    width: 86%;
+    padding: 2% 4%;
+    background-color: #0090FA;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin-top: 5%;
+    color: #ffffff;
+}
+
+.aninvoice .title {
+    font-size: 0.8rem;
+    margin-right: 5%;
+    color: #707070;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;background: #ecebeb;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,52 +10,67 @@
     <link rel="stylesheet" href="../css/hemo.css">
     <title>异业联盟户端</title>
     <style>
-        *{
+        * {
             margin: 0;
+        }
+        
+        .swiper-container {
+            height: 14.5rem;
         }
     </style>
 </head>
+
 <body style="height: 100%;">
     <div class="app">
         <!-- //轮播图 -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"> Slide1</div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src="../image/timg.jpg" class="swiperimg" /></div>
+                <div class="swiper-slide"> <img src="../image/timg.jpg" class="swiperimg" /></div>
+                <div class="swiper-slide"> <img src="../image/timg.jpg" class="swiperimg" /></div>
+                <div class="swiper-slide"> <img src="../image/timg.jpg" class="swiperimg" /></div>
+                <div class="swiper-slide"> <img src="../image/timg.jpg" class="swiperimg" /></div>
+            </div>
+            <div class="pagination"></div>
+        </div>
+
+        <!-- 内容 -->
+        <div class="content">
+            <div class="content-one">
+                <div class="content-oneDiv">
+                    
                 </div>
-                <div class="pagination"></div>
+                <p class="text">中石化中石化中石化中石化中石化中石化丰富的顺丰到付发的都是</p>
+                <div class="text-content">
+                    <p class="text-nub">￥730.00<span class="text-hua">￥6900</span></p>
+                    <p class="text-biao">
+                        <svg class="icon iconfonts" aria-hidden="true">
+                                        <use xlink:href="#iconfenxiang"></use>
+                                </svg>
+                    </p>
+                </div>
             </div>
 
-            <!-- 内容 -->
-            <div class="content">
-                    <div class="content-one">
-                        <div class="content-oneDiv"></div>
-                        <p class="text">中石化中石化中石化中石化中石化中石化丰富的顺丰到付发的都是</p>
-                        <div class="text-content">
-                            <p class="text-nub">￥730.00<span class="text-hua">￥6900</span></p>
-                            <p class="text-biao">￥</p>
-                        </div>
-                    </div>
-                    
-            </div>
-            
+        </div>
+
     </div>
 </body>
 <script src="../js/swiper.js"></script>
 <script src="../js/vue.js"></script>
 <script>
     window.onload = function() {
-        var mySwiper = new Swiper('.swiper-container',{
-                autoplay : 4000,//可选选项，自动滑动
-                loop : true,//可选选项，开启循
-            pagination : '.pagination',
-        });  
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: 4000, //可选选项，自动滑动
+            loop: true, //可选选项，开启循
+            pagination: '.pagination',
+        });
     }
     var app = new Vue({
-        el:'.app',
-        data:{
+        el: '.app',
+        data: {
 
         },
-        methods:{
+        methods: {
 
         }
     })

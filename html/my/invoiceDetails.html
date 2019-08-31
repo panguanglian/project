@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../../css/my/invoiceDetails.css">
+    <script src="../../js/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <title>发票详情</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="app">
+            <div class="reserve" v-for='(item,index) in aninvoice'>
+                    <div>
+                        <div>发票代码：</div>
+                        <div>{{item.reserveId}}</div>
+                        
+                    </div>
+                    <div>
+                        <div>发票号码：</div>
+                        <div>{{item.reserveId}}</div>
+                    </div>
+                    <div>
+                        <div>开票时间：</div>
+                        <div>{{item.time}}</div>
+                    </div>
+                </div>
+        <div class="reserve" v-for='(item,index) in reserve'>
+            <div>
+                <div>订单编号：</div>
+                <div>{{item.reserveId}}</div>
+                <div class="right">查看订单</div>
+            </div>
+            <div>
+                <div>申请时间：</div>
+                <div>{{item.time}}</div>
+            </div>
+            <div>
+                <div>开票金额：</div>
+                <div>¥{{item.money}}</div>
+            </div>
+        </div>
+        <div class="invoice" v-for='(item,index) in invoice'>
+            <div v-if='item.content'>
+                <div>发票内容：</div>
+                <div>{{item.content}}</div>
+            </div>
+            <div v-if='item.invoiceTitle'>
+                <div>发票抬头：</div>
+                <div>{{item.invoiceTitle}}</div>
+            </div>
+            <div v-if='item.titleName'>
+                <div>抬头名称：</div>
+                <div>{{item.titleName}}</div>
+            </div>
+            <div v-if='item.tax'>
+                <div>公司税号：</div>
+                <div>{{item.tax}}</div>
+            </div>
+            <div v-if='item.telephone'>
+                <div>电话号码：</div>
+                <div>{{item.telephone}}</div>
+            </div>
+            <div v-if='item.site'>
+                <div>单位地址：</div>
+                <div>{{item.site}}</div>
+            </div>
+            <div v-if='item.bank'>
+                <div>开户银行：</div>
+                <div>{{item.bank}}</div>
+            </div>
+            <div v-if='item.card'>
+                <div>银行账号：</div>
+                <div>{{item.card}}</div>
+            </div>
+            <div v-if='item.phone'>
+                <div>收票人电话：</div>
+                <div>{{item.phone}}</div>
+            </div>
+            <div v-if='item.email'>
+                <div>收票人邮箱：</div>
+                <div>{{item.email}}</div>
+            </div>
+
+        </div>
+        
+        <div class="invoiceBtn">
+            开票
+        </div>
+    </div>
+</body>
+<script>
+
+    var app = new Vue({
+        el: '.app',
+        data: {
+            reserve: [
+                { reserveId: '6154235415654875', time: '2019.08.22 12:25:32', money: '54213.00' }
+            ],
+            invoice: [
+                { content: '商品明细', invoiceTitle: '单位', titleName: '深圳市跨越新科技有限公司', tax: '91440522AB85PUIQWW', telephone: '020-85674563', site: '广州珠江新城保利克络维B幢', bank: '招商银行', card: '1245663222323333', phone: '13546245875', email: 'Zhangdadawuhuarou@163.vip.com' },
+                // {content: '商品明细', invoiceTitle: '个人', titleName: '张大大五花肉店',}
+            ],
+            aninvoice:[
+                // {code:'044031800311',reserveId:'6154235415654875',time:'2019.08.22 12:25:32'}
+            ]
+        },
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

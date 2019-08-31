@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../../css/my/aninvoice.css">
+    <script src="../../js/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <title>发票详情</title>
+    <style>
+        * {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="aninvoice">
+            <div>
+                <div class="title">发票代码:</div>
+                <div><input type="text" placeholder="请输入发票代码" v-model='code'></div>
+            </div>
+            <div>
+                <div class="title">发票号码:</div>
+                <div><input type="text" placeholder="请输入发票号码" v-model='num'></div>
+            </div>
+            <div>
+                <div class="title">发票金额:</div>
+                <div><input type="text" placeholder="¥ 请输入发票号码" v-model='money'></div>
+            </div>
+        </div>
+        <div class="invoiceBtn" @click='aninvoice'>
+            开票
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {
+            code: '',
+            num: '',
+            money: ''
+        },
+        methods: {
+            aninvoice() {
+                console.log(this.code)
+                console.log(this.num)
+                console.log(this.money)
+            }
+        }
+    })
+</script>
+
+</html>

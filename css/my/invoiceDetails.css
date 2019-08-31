@@ -1,0 +1,75 @@
+html {
+    background-color: #F1F1F1;
+}
+
+.reserve {
+    width: 86%;
+    padding: 4%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    margin-top: 4%;
+    font-size: 0.6rem;
+}
+
+.reserve>div {
+    margin-top: 2%;
+}
+
+.reserve>div div {
+    display: inline-block;
+
+}
+
+.reserve>div div:first-child {
+    color: #707070;
+    margin-right: 2%;
+}
+
+
+
+.reserve .right {
+    float: right;
+    background-color: #F1F1F1;
+    color: #707070;
+    border-radius: 0.5rem;
+    width: 3.5rem;
+    height: 1.2rem;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+
+.invoice {
+    width: 86%;
+    padding: 4%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    margin-top: 4%;
+    font-size: 0.6rem;
+}
+
+.invoice>div {
+    margin-top: 2%;
+}
+
+.invoice>div div {
+    display: inline-block;
+
+}
+
+.invoice>div div:first-child {
+    color: #707070;
+    margin-right: 2%;
+}
+.invoiceBtn{
+    width: 86%;
+    padding: 2% 4%;
+    background-color: #0090FA;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin-top: 5%;
+    color: #ffffff;
+}

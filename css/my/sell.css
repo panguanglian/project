@@ -24,18 +24,18 @@ html {
 .reserveMark {
     font-size: 0.7rem;
     display: flex;
-    
+    margin-bottom: 2%;
 }
 
 .reserveMark div:last-child {
     text-align: right;
-    
+    color: #FF4536;
 }
 
 .reserveTime {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     display: flex;
-    color: #FF4536;
+    color: #707070;
     margin-top: 4%;
 }
 
@@ -65,7 +65,7 @@ html {
 }
 
 .reserveInfo .info div {
-    margin-bottom: 4%;
+    margin-top: 2%;
     height: 1rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -80,24 +80,4 @@ html {
     width: 4rem;
     border-radius: 1.5rem;
     float: right;
-}
-.el-tabs__nav{
-    width: 100%;
-    display: flex;
-}
-.el-tabs__item{
-    flex: 1;
-    text-align: center;
-}
-.reserveMark .gray{
-    color: #9597A6;
-}
-.el-tabs__nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #fff;
-}
-.el-tabs__content{
-    margin-top: 10%;
 }
