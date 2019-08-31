@@ -41,7 +41,7 @@
         <div class="isModal" @click="shut" v-if='show'>
 
         </div>
-        <div class="modal fadelogIn" v-if='show'>
+        <div class="modal fadelogIn" v-if='shows'>
             <div style="color: red;" @click='deletes'>删除</div>
             <div @click='alter'>修改</div>
 
@@ -68,6 +68,7 @@
                 { id: 3, Name: '中国建设银行', userName: '张立', caerNum: '5124' }
             ],
             show: false,
+            shows: false,
             subscript:'',
             confirms:false
         },
@@ -80,22 +81,25 @@
         methods: {
             shut() {
                 this.show = false
+                this.shows = false
                 this.confirms = false
             },
             isCards(index) {
                 this.show = true
+                this.shows = true
                 this.subscript=index
                 console.log(index)
             },
             deletes(){
                 this.confirms = true
+                this.shows = false
             },
             del(){
-                console.log(this.subscript)
+                // console.log(this.subscript)
                 
-                console.log(this.cards[this.subscript])
+                // console.log(this.cards[this.subscript])
                 this.cards.splice(this.subscript,1)
-                console.log(this.cards)
+                // console.log(this.cards)
                 this.iscards=this.cards
                 this.show = false
                 this.confirms = false
