@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+}
+.changeOption{
+    height: 2.5rem;
+    display: flex;
+    
+}
+.changeOption div{
+    width: 50%;
+    font-size: 0.9rem;
+    color: #707070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.02rem solid #EBEBEB;
+}
+.changeOption div.active{
+    color: #0090FA;
+    border-bottom: 0.02rem solid #0090FA;
+}
