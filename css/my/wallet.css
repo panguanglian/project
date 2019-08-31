@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+}
+
+html {
+    background-color: #F1F1F1;
+}
+
+.cards {
+    width: 90%;
+    height: 5rem;
+    background-color: #f85252;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    line-height: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.cards>div {
+    display: inline-block;
+}
+
+.logo {
+    width: 3rem;
+    height: 3rem;
+    background: #000;
+    border-radius: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.idCaer {
+    width: 100%;
+    display: flex
+}
+
+.idCaer div {
+    flex: 1;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.cards .info {
+    color: #ffffff;
+    width: 65%;
+}
+
+.cards .right {
+    float: right;
+}
+
+.usName div {
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.paquet {
+    color: #ffffff;
+    width: 92%;
+    background-color: #0090FA;
+    padding: 4%;
+    margin-bottom: 1rem;
+}
+
+.monnaie {
+    width: 100%;
+    margin: 2%;
+}
+
+.monnaie div {
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.right {
+    float: right;
+}
+
+.paquetTitle {
+    font-size: 0.6rem;
+    margin: 2%;
+}
+
+.nav {
+    margin-right: 2%;
+}
+
+.addCarb {
+    width: 84%;
+    text-align: center;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 3%;
+    border-radius: 0.5rem;
+    color: #707070;
+    font-size: 0.7rem;
+}
+
+.isModal {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    width: 100%;
+    /* height: 9rem; */
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    border-radius: 0.9rem 0.9rem 0 0;
+
+}
+
+.modal div {
+    font-size: 1rem;
+
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 0.01rem solid #d4d1d1;
+}
+
+.fadelogIn {
+    -webkit-animation: fadelogIn .4s;
+    animation: fadelogIn .4s;
+}
+
+@keyframes fadelogIn {
+    0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes fadelogIn {
+    0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        -webkit-transform: none;
+    }
+}
+.confirm{
+    width: 70%;
+    background-color: #ffffff;
+    position: fixed;
+    top: 50%;
+    left: 15%;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+.hint{
+    border-bottom: 0.05rem solid #d4d1d1;
+    width: 100%;
+    height: 6rem;
+    line-height: 6rem;
+    color: #030303;
+}
+.choice{
+    display: flex;
+}
+.choice div{
+    flex: 1;
+    height: 2rem;
+    line-height: 2rem;
+}
