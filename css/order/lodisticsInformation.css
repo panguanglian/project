@@ -14,8 +14,11 @@
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background: red;
-
+}
+.logisticssImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 .logisticssTest{
     width: 82%;
@@ -25,6 +28,7 @@
 .logisticssTest p{
     font-size: 0.8rem;
     color: #9597A6;
+    margin-top: 0.5rem;
 }
 .copy{
     background: #F1F1F1;

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的钱包</title>
     <link rel="stylesheet" href="../../css/my/wallet.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <style>
         
     </style>
@@ -17,12 +19,18 @@
             <div class="paquetTitle">账户金额(元)</div>
             <div class="monnaie">
                 <div>168,888.00</div>
-                <div class="right nav">></div>
+                <div class="right nav">
+                        <svg class="icon " aria-hidden="true" style="height: 1.2rem;width:1.2rem;">
+                                <use xlink:href="#iconyoujiantou-copy"></use>
+                            </svg>
+                </div>
             </div>
         </div>
         <div class="cardBag">
             <div class="cards" v-for='(item,index) in iscards' @click='isCards(index)'>
-                <div class="logo"></div>
+                <div class="logo">
+                    
+                </div>
                 <div class="info">
                     <div class="usName">
                         <div>{{item.Name}}</div>

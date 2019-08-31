@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/my/message.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <title>信息中心</title>
     <style>
        
@@ -16,7 +18,11 @@
     <div class="app">
         <div class="message">
             <div class="without" :class='[info=="" ? "show" : "heid"]'>
-                <div class="infoIcon"></div>
+                <div class="infoIcon">
+                    <svg class="icon" aria-hidden="true" style="width: 5rem;height:5rem;">
+                        <use xlink:href="#iconmeiyouxiaoxi"></use>
+                    </svg>
+                </div>
                 <div>暂时没有任何消息</div>
             </div>
             <div class="infoBox" v-for='(item,index) in info'>
@@ -34,7 +40,11 @@
                 <div class="time">{{item.time}}</div>
                 <div class="info">
                     <div class="infoTitle">{{item.title}}</div>
-                    <div class="particulars">查看详情<div style="float: right">></div></div>
+                    <div class="particulars">查看详情<div style="float: right">
+                            <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;">
+                                <use xlink:href="#iconyoujiantou"></use>
+                            </svg>
+                    </div></div>
                 </div>
             </div>
         </div>
@@ -51,6 +61,7 @@
                 {id:1,title:'信息标题',time:'2019年07月22号 14:52:21',infoContent:'这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',infoImg:'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566978051&di=00eea714ac95536fa144392d9f605aab&src=http://b.zol-img.com.cn/soft/6/571/cepyVKtIjudo6.jpg'},
                 {id:2,title:'信息标题',time:'2019年07月22号 14:52:21',infoContent:'这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',infoImg:''},
                 {id:3,title:'阿猫阿狗阿猫阿狗阿猫阿狗阿猫阿狗信息标题信信息信息标题',time:'2019年07月22号 14:52:21',infoContent:'这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',infoImg:'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566978051&di=00eea714ac95536fa144392d9f605aab&src=http://b.zol-img.com.cn/soft/6/571/cepyVKtIjudo6.jpg'}
+            
             ],
             longTitle:[
                 

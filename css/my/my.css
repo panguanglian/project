@@ -14,7 +14,11 @@
     height: 5rem;
     border-radius: 2.5rem;
     margin-top: 2rem;
-    background-color: #aef4e7;
+}
+.gerenXinXi img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 .gerenNub{
     position: absolute;
@@ -66,47 +70,38 @@ margin-top: 0.2rem;
 }
 .time{
 font-size: 0.7rem;
-color: #707070
+color: #707070;
+display: flex;
+align-items: center;
 }
 .ChoiceTitle{
 text-align: center;
 }
 .myChoice p{
+    margin-top: 0.5rem;
 font-size: 0.8rem;
 color: #707070;
 }
+.Choice{
+    position: relative;
+}
+.Choice .numbers{
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+    width: 01rem;
+    height: 01rem;
+    background: red;
+    border-radius: 50%;
+    font-size: 0.5rem;
+    color:#fff;
+}
+.iconfonts{
+    width: 1.5rem;
+    height: 1.5rem;
+}
 
 
-.myContentInvoice{
-width: 92%;
-padding: 1rem 0.8rem;
-box-sizing: border-box;
-background: #fff;
-border-radius: 0.5rem;
-margin-bottom: 1rem;
-}
-.myInvoice{
-height: 2rem;
-}
-.myInvoice>span{
-font-size: 0.8rem;
-width: 30%;
-}
-.myTicket{
-margin-top:0.2rem; 
-display: flex;
-flex-flow: row wrap;
-justify-content: space-between;
-}
-.TicketTitle{
-width: 25%;
-text-align: center;
-margin-bottom: 1rem;
-}
-.myTicket p{
-font-size: 0.8rem;
-color: #707070;
-}
 
 
 
@@ -130,6 +125,7 @@ flex-flow: row wrap;
 justify-content: space-between;
 }
 .myHelp p{
+    margin-top: 0.5rem;
 font-size: 0.8rem;
 color: #707070;
 }

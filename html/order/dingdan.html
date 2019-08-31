@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" style="height:100%;">
+<html lang="en" style="height:100%;background: #ecebeb;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/order/dingdan.css">
     <link rel="stylesheet" href="../../css/my/wallet.css">
-    <link rel="stylesheet" href="../../css/element.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
     <title>订单</title>
     <style>
         *{ 
             margin: 0;
-        }
-        .app{
-            height: 100%;
-            background: #ecebeb;
         }
         .textColor{
             color: #9597A6;
@@ -63,7 +59,11 @@
         </div>
 
         <div class="dingDanNull" v-else>
-            <div class="NullLcon">￥</div>
+            <div class="NullLcon">
+                    <svg class="icon iconfonts" aria-hidden="true">
+                        <use xlink:href="#iconzanwushuju"></use>
+                    </svg>
+            </div>
             <p class="NullLconWords">您暂时没有订单哦！</p >
         </div>
         <div class="isModal" v-if='show'>
@@ -82,7 +82,7 @@
     </div>  
 </body>
 <script src="../../js/vue.js"></script>
-<script type="text/javascript" src="../../js/element.js"></script>
+<script src="../../js/iconfont.js"></script>
 <script>                  
     var app = new Vue({
         el:'.app',
