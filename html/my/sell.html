@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="../../css/my/sell.css">
+    <script src="../../js/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <title>售后</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="sell">
+            <template>
+                <el-tabs v-model="activeName" @tab-click="handleClick">
+                    <el-tab-pane label="待处理" name="first">
+                        <div class="pending" v-for='(item,index) in pending'>
+                            <div class="reserveMark">
+                                <div style="flex: 2;">订单号：{{item.resMark}}</div>
+                                <div style="flex: 1;">{{item.resGenre}}</div>
+                            </div>
+                            <div class="reserveInfo">
+                                <div class="img"></div>
+                                <div class="info">
+                                    <div>{{item.resTitle}}</div>
+                                    <div style="color: #9597A6;">{{item.subjoin}}</div>
+                                    <div v-if='item.money'>退款金额：<span style="color: #FF4536;">{{item.money}}</span></div>
+                                </div>
+                            </div>
+                            <div class="reserveTime">
+                                <div style="flex: 2;">2019.08.22 12:25:32</div>
+                                <div style="flex: 1;">
+                                    <div class="check">查看</div>
+                                </div>
+                            </div>
+                        </div>
+                    </el-tab-pane>
+                    <el-tab-pane label="处理中" name="second">
+                            <div class="pending" v-for='(item,index) in underway'>
+                                    <div class="reserveMark">
+                                        <div style="flex: 2;">订单号：{{item.resMark}}</div>
+                                        <div style="flex: 1;">{{item.resGenre}}</div>
+                                    </div>
+                                    <div class="reserveInfo">
+                                        <div class="img"></div>
+                                        <div class="info">
+                                            <div>{{item.resTitle}}</div>
+                                            <div style="color: #9597A6;">{{item.subjoin}}</div>
+                                            <div v-if='item.money'>退款金额：<span style="color: #FF4536;">{{item.money}}</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="reserveTime">
+                                        <div style="flex: 2;">2019.08.22 12:25:32</div>
+                                        <div style="flex: 1;">
+                                            <div class="check">售后完成</div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </el-tab-pane>
+                    <el-tab-pane label="已处理" name="third">
+                            <div class="pending" v-for='(item,index) in already'>
+                                    <div class="reserveMark">
+                                        <div style="flex: 2;">订单号：{{item.resMark}}</div>
+                                        <div style="flex: 1; color: #9597A6;">{{item.resGenre}}</div>
+                                    </div>
+                                    <div class="reserveInfo">
+                                        <div class="img"></div>
+                                        <div class="info">
+                                            <div>{{item.resTitle}}</div>
+                                            <div style="color: #9597A6;">{{item.subjoin}}</div>
+                                            <div v-if='item.money'>退款金额：<span style="color: #FF4536;">{{item.money}}</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="reserveTime">
+                                        <div style="flex: 2;">2019.08.22 12:25:32</div>
+                                        <div style="flex: 1;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                    </el-tab-pane>
+
+                </el-tabs>
+            </template>
+        </div>
+
+
+
+    </div>
+</body>
+<script>
+
+    var app = new Vue({
+        el: '.app',
+        data: {
+            activeName: 'first',
+            pending: [
+                { resMark: '6154235415654875', resImg: '', resGenre: '退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
+                { resMark: '8465412547854125', resImg: '', resGenre: '退货退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
+                { resMark: '6154235415654875', resImg: '', resGenre: '维修申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'},
+                { resMark: '8465412547854125', resImg: '', resGenre: '换货申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'}
+            ],
+            underway:[
+                { resMark: '6154235415654875', resImg: '', resGenre: '退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
+                { resMark: '8465412547854125', resImg: '', resGenre: '退货退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
+                { resMark: '6154235415654875', resImg: '', resGenre: '维修申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'},
+                { resMark: '8465412547854125', resImg: '', resGenre: '换货申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'}
+            ],
+            already:[
+                { resMark: '6154235415654875', resImg: '', resGenre: '退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
+                { resMark: '8465412547854125', resImg: '', resGenre: '退货退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
+                { resMark: '6154235415654875', resImg: '', resGenre: '维修申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'},
+                { resMark: '8465412547854125', resImg: '', resGenre: '换货申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'}
+            ]
+        },
+        methods: {
+            handleClick(tab, event) {
+                console.log(tab, event);
+            }
+        }
+    })
+</script>
+
+</html>
