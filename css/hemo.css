@@ -47,7 +47,7 @@
     text-decoration: line-through;
 }
 .text-biao{
-   
+   margin-top: 0.2rem;
     font-size: 0.05rem;
     color: #fa5a5a;
 }
@@ -83,4 +83,14 @@
     background-color: aquamarine;
     margin: 0 auto;
     border-radius: 50%;
+}
+.iconfonts{
+    width: 0.9rem;
+    height: 0.9rem;
+}
+.swiperimg{
+    width: 100%;
+}
+.swiper-wrapper{
+    height: 3rem;
 }

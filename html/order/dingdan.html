@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/order/dingdan.css">
+    <link rel="stylesheet" href="../../css/my/wallet.css">
     <link rel="stylesheet" href="../../css/element.css">
     <title>订单</title>
     <style>
@@ -65,16 +66,16 @@
             <div class="NullLcon">￥</div>
             <p class="NullLconWords">您暂时没有订单哦！</p >
         </div>
+        <div class="isModal" v-if='show'>
 
-        <el-dialog
-        :visible.sync="dialogVisible"
-        width="90%">
-        <span>确定关闭本次订单</span>
-        <span slot="footer" class="dialog-footer">
-            <el-button @click="dialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-        </span>
-        </el-dialog>
+        </div>
+        <div class="confirm" v-if='confirms'>
+            <div class="hint">确定关闭本次订单？</div>
+            <div class="choice">
+                <div style="border-right: #d4d1d1 solid 0.05rem; color: #9597A6;" @click='confirms = false,show = false'>否</div>
+                <div style="color: #0090FA;" @click='confirms = false,show = false'>是</div>
+            </div>
+        </div>
 
         
 
@@ -95,7 +96,8 @@
                 {id:1,title:'1233455324568456',status:'待付款',ssss:[{name:'中化石油加油卡礼包',img:'../../image/zu100.png',titleTest:'内含一张1000元加油卡',pirce:'￥3455.00',numders:'2'},],imgs:'../../image/daffodil.jpg',userName:'嗷嗷喊',method:'关闭订单'},
             ],
             indexNum:0,
-            dialogVisible:false
+            confirms:false,
+            show: false,
         },
         created(){
 
@@ -110,11 +112,13 @@
                 }
                 
             },
+            
             methodBtn(item){
                 if(item=='关闭订单'){
-                    this.dialogVisible=true
+                    this.confirms=true
+                    this.show = true
                 }
-            }
+            },
         }
     })
 </script>
