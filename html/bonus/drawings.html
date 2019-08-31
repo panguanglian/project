@@ -55,6 +55,7 @@
             <div class="isCard" v-for="(item,index) in isCard">
                 <div class="circle"><img :src="item.icon" alt=""></div>
                 <div class="">{{item.cardMark}}</div>
+                
                 <div class="radios"><input type="radio" name="a" @click='pitchon(index)' :checked='item.checked'></div>
 
             </div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../js/vue.js"></script>
+    <title>消息详情</title>
+    <style>
+        *{margin: 0;}
+        .contents{
+            padding: 1rem 0.5rem;
+            box-sizing: border-box;
+        }
+        .contents h4{
+            font-size: 1rem;
+            color: #030303;
+        }
+        .times{
+            margin: 0.2rem 0;
+            font-size: 0.8rem;
+            color: #9597A6;
+        }
+        .img{
+            width: 100%;
+            margin: 1rem 0;
+        }
+        .img img{
+            width: 100%;
+            border-radius: 0.5rem;
+
+        }
+        .test{
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #707070
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="contents">
+               <h4>近段时间拉进来房间看到了房价就</h4>
+               <p class="times">
+                    2019年07月12号 14.52.21
+               </p>
+               <div class="img">
+               </div>
+               <p class="test">
+                    这里是内容
+               </p>
+        </div>
+    </div>
+</body>
+<script>
+    
+    var app = new Vue({
+        el:'.app',
+    })
+</script>
+</html>
