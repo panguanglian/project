@@ -16,7 +16,7 @@
         }
         
         .swiper-container {
-            height: 14.5rem;
+            height: 12.5rem;
         }
     </style>
 </head>
@@ -53,36 +53,36 @@
             </div>
 
         </div>
-        <div class="model" v-if='show' @click='show=false'  v-if='show'>
-                
-            </div>
-            <div class="modelInfo" v-if='show'>
-                <div class="friend" @click='send'>
-                    <div class="icon">
-                            <svg class="icon iconfonts" aria-hidden="true">
+        <div class="model" v-if='show' @click='show=false' v-if='show'>
+
+        </div>
+        <div class="modelInfo" v-if='show'>
+            <div class="friend" @click='send'>
+                <div class="icon">
+                    <svg class="icon iconfonts" aria-hidden="true">
                                 <use xlink:href="#iconweixin"></use>
                             </svg>
-                    </div>
-                    <div>微信好友</div>
                 </div>
-                <div class="friend" @click='send'>
-                        <div class="icon">
-                                <svg class="icon iconfonts" aria-hidden="true">
+                <div>微信好友</div>
+            </div>
+            <div class="friend" @click='send'>
+                <div class="icon">
+                    <svg class="icon iconfonts" aria-hidden="true">
                                     <use xlink:href="#iconpengyouquan"></use>
                                 </svg>
-                        </div>
-                        <div>朋友圈</div>
-                    </div>
-                    <div class="friend" @click='send'>
-                            <div class="icon">
-                                    <svg class="icon iconfonts" aria-hidden="true">
+                </div>
+                <div>朋友圈</div>
+            </div>
+            <div class="friend" @click='send'>
+                <div class="icon">
+                    <svg class="icon iconfonts" aria-hidden="true">
                                         <use xlink:href="#iconQQ"></use>
                                     </svg>
-                            </div>
-                            <div>qq好友</div>
-                        </div>
-               
+                </div>
+                <div>qq好友</div>
             </div>
+
+        </div>
 
     </div>
 </body>
@@ -100,11 +100,11 @@
     var app = new Vue({
         el: '.app',
         data: {
-            show:false,
+            show: false,
         },
         methods: {
-            fenxiang(){
-                this.show=true
+            fenxiang() {
+                this.show = true
             }
         }
     })
