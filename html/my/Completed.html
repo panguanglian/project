@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" style="height:100%;background: #ecebeb;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,78 +9,101 @@
     <link rel="stylesheet" href="../../css/order/orderDetails.css">
     <link rel="stylesheet" href="../../css/my/refund.css">
     <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
-   
+
     <title>已完成</title>
     <style>
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
         
-                 
+        .backtrack {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body style="height:100%;">
     <div class="app">
-        <div class="headerTitle">
-                <svg class="icon iconfonts" aria-hidden="true">
+        <div class="headFence"></div>
+        <div class="backtrack" @click='backtrack'>
+            <</div>
+                <div class="headerTitle">
+                    <svg class="icon iconfonts" aria-hidden="true">
                     <use xlink:href="#iconyiwancheng" ></use>
-                </svg>
-                已完成
-            <div class="boxthite"></div>
-        </div>
-        
-        <div class="content" >
-            <div class="cneterBox">
-                <div class="functions">
-                        <span>订单编号：</span>
-                        <p class="dingdan">6154235415654875</p>
-                        <span class="checkeds">查看订单</span>
+                </svg> 已完成
+                    <div class="boxthite"></div>
                 </div>
-                <div class="functions">
-                    <span>订单状态：</span>
-                    <p class="dingdannum">已完成</p>
-                </div>
-                
-            </div>
-            <div class="content-neirong" >
-                    <div class="functions">
-                        <span>售后类型：</span>
-                        <p class="dingdannum">仅退款</p>
+
+                <div class="content">
+                    <div class="cneterBox">
+                        <div class="functions">
+                            <span>订单编号：</span>
+                            <p class="dingdan">6154235415654875</p>
+                            <span class="checkeds">查看订单</span>
+                        </div>
+                        <div class="functions">
+                            <span>订单状态：</span>
+                            <p class="dingdannum">已完成</p>
+                        </div>
+
                     </div>
-                    <div class="functions">
+                    <div class="content-neirong">
+                        <div class="functions">
+                            <span>售后类型：</span>
+                            <p class="dingdannum">仅退款</p>
+                        </div>
+                        <div class="functions">
                             <span>申请时间：</span>
                             <p class="dingdannum">2019.08.22 12:25:32</p>
-                    </div>
-                    <div class="functions">
+                        </div>
+                        <div class="functions">
                             <span>售后原因：</span>
                             <p class="dingdannum">机器出现了故障问题，进水的时候会出现机器出现了故障问题，进水的时候会出现机</p>
-                    </div>
-                    <div class="functions">
+                        </div>
+                        <div class="functions">
                             <span>图片说明：</span>
                             <div class="dingdannum">
                                 <div class="imgbox">
                                     <img src="../../image/daffodil.jpg" alt="">
                                 </div>
                             </div>
+                        </div>
                     </div>
-            </div>
+
+                </div>
+
 
         </div>
-       
-
-    </div>
 </body>
 <script src="../../js/vue.js"></script>
 <script src="../../js/iconfont.js"></script>
 <script>
     var app = new Vue({
-        el:'.app',
-        data:{
-        },
-        created(){
+        el: '.app',
+        data: {},
+        created() {
 
         },
-        methods:{
-            
-           
+        methods: {
+            backtrack() {
+                window.history.go(-1)
+            },
+
+
         }
     })
 </script>
+
 </html>

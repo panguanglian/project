@@ -9,59 +9,86 @@
     <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
     <script src="../../js/iconfont.js"></script>
     <style>
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
         
+        .backtrack {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 
 <body>
     <div class="app">
-        <div class="paquet">
-            <div class="paquetTitle">账户金额(元)</div>
-            <div class="monnaie">
-                <div>168,888.00</div>
-                <div class="right nav">
-                        <svg class="icon " aria-hidden="true" style="height: 1.2rem;width:1.2rem;">
+        <div class="headFence">我的钱包</div>
+        <div class="backtrack" @click='backtrack'>
+            <</div>
+                <div class="paquet">
+                    <div class="paquetTitle">账户金额(元)</div>
+                    <div class="monnaie">
+                        <div>168,888.00</div>
+                        <div class="right nav">
+                            <svg class="icon " aria-hidden="true" style="height: 1.2rem;width:1.2rem;">
                                 <use xlink:href="#iconyoujiantou-copy"></use>
                             </svg>
-                </div>
-            </div>
-        </div>
-        <div class="cardBag">
-            <div class="cards" v-for='(item,index) in iscards' @click='isCards(index)'>
-                <div class="logo">
-                    
-                </div>
-                <div class="info">
-                    <div class="usName">
-                        <div>{{item.Name}}</div>
-                        <div class="right">{{item.userName}}</div>
-                    </div>
-                    <div class="idCaer">
-                        <div>****</div>
-                        <div>****</div>
-                        <div>****</div>
-                        <div>{{item.caerNum}}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="addCarb">添加银行卡</div>
-        </div>
-        <div class="isModal" @click="shut" v-if='show'>
+                <div class="cardBag">
+                    <div class="cards" v-for='(item,index) in iscards' @click='isCards(index)'>
+                        <div class="logo">
 
-        </div>
-        <div class="modal fadelogIn" v-if='shows'>
-            <div style="color: red;" @click='deletes'>删除</div>
-            <div @click='alter'>修改</div>
+                        </div>
+                        <div class="info">
+                            <div class="usName">
+                                <div>{{item.Name}}</div>
+                                <div class="right">{{item.userName}}</div>
+                            </div>
+                            <div class="idCaer">
+                                <div>****</div>
+                                <div>****</div>
+                                <div>****</div>
+                                <div>{{item.caerNum}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="addCarb">添加银行卡</div>
+                </div>
+                <div class="isModal" @click="shut" v-if='show'>
 
+                </div>
+                <div class="modal fadelogIn" v-if='shows'>
+                    <div style="color: red;" @click='deletes'>删除</div>
+                    <a href="modifyBankCard.html">
+                        <div @click='alter'>修改</div>
+                    </a>
+                </div>
+                <div class="confirm" v-if='confirms'>
+                    <div class="hint">确定删除改银行卡</div>
+                    <div class="choice">
+                        <div style="border-right: #d4d1d1 solid 0.05rem; color: #9597A6;" @click='shut'>否</div>
+                        <div style="color: #0090FA;" @click='del'>是</div>
+                    </div>
+                </div>
         </div>
-        <div class="confirm" v-if='confirms'>
-            <div class="hint">确定删除改银行卡</div>
-            <div class="choice">
-                <div style="border-right: #d4d1d1 solid 0.05rem; color: #9597A6;" @click='shut'>否</div>
-                <div style="color: #0090FA;" @click='del'>是</div>
-            </div>
-        </div>
-    </div>
 </body>
 
 <script src="../../js/vue.js"></script>
@@ -69,19 +96,30 @@
     var app = new Vue({
         el: '.app',
         data: {
-            isards:[],
-            cards: [
-                { id: 1, Name: '中国银行', userName: '张立', caerNum: '5124' },
-                { id: 2, Name: '中国工商银行', userName: '张立', caerNum: '5124' },
-                { id: 3, Name: '中国建设银行', userName: '张立', caerNum: '5124' }
-            ],
+            isards: [],
+            cards: [{
+                id: 1,
+                Name: '中国银行',
+                userName: '张立',
+                caerNum: '5124'
+            }, {
+                id: 2,
+                Name: '中国工商银行',
+                userName: '张立',
+                caerNum: '5124'
+            }, {
+                id: 3,
+                Name: '中国建设银行',
+                userName: '张立',
+                caerNum: '5124'
+            }],
             show: false,
             shows: false,
-            subscript:'',
-            confirms:false
+            subscript: '',
+            confirms: false
         },
         created() {
-            this.iscards=this.cards
+            this.iscards = this.cards
         },
         mounted() {
 
@@ -95,24 +133,27 @@
             isCards(index) {
                 this.show = true
                 this.shows = true
-                this.subscript=index
+                this.subscript = index
                 console.log(index)
             },
-            deletes(){
+            deletes() {
                 this.confirms = true
                 this.shows = false
             },
-            del(){
+            del() {
                 // console.log(this.subscript)
-                
+
                 // console.log(this.cards[this.subscript])
-                this.cards.splice(this.subscript,1)
-                // console.log(this.cards)
-                this.iscards=this.cards
+                this.cards.splice(this.subscript, 1)
+                    // console.log(this.cards)
+                this.iscards = this.cards
                 this.show = false
                 this.confirms = false
             },
-            alter(){
+            backtrack() {
+                window.history.go(-1)
+            },
+            alter() {
 
             }
         }
