@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../css/order/dingdan.css">
     <link rel="stylesheet" href="../../css/my/wallet.css">
     <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
     <title>订单</title>
     <style>
         *{ 
@@ -15,13 +16,27 @@
         .textColor{
             color: #9597A6;
         }
+        [v-cloak]{
+            display: none;
+        }
+        .titles{
+            height: 2rem;
+            background: #0090FA;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
         
     </style>
 </head>
 <body style="height:100%;">
-    <div class="app"> 
+    <div class="app" v-cloak> 
         <!-- 头部信息 -->
-
+        <div class="titles">
+            订单
+        </div>
         <div class="head-xu" >
             <p :class="indexNum == index ? 'active':''" v-for="(item,index) in testList" @click="btnOrder(index)">{{item}}</p>
         </div>
@@ -76,7 +91,66 @@
                 <div style="color: #0090FA;" @click='confirms = false,show = false'>是</div>
             </div>
         </div>
-
+        <div class="di"></div>
+         <!-- 导航栏 -->
+         <div class="navbars">
+                <div>
+                    <a href="../../html/store/hemo.html">
+                  <p>
+                    <svg
+                      class="icon"
+                      aria-hidden="true"
+                      style="width: 1.5rem;height:1.5rem;"
+                    >
+                      <use xlink:href="#icondianpu1"></use>
+                    </svg>
+                  </p>
+                  <p >店铺</p>
+                </a>
+                </div>
+                <div>
+                    
+                  <p>
+                    <svg
+                      class="icon"
+                      aria-hidden="true"
+                      style="width: 1.5rem;height:1.5rem;"
+                    >
+                      <use xlink:href="#icondingdan"></use>
+                    </svg>
+                  </p>
+                  <p class="active">订单</p>
+                </div>
+          
+                <div>
+                    <a href="../../html/bonus/bonusInfo.html">
+                  <p>
+                    <svg
+                      class="icon"
+                      aria-hidden="true"
+                      style="width: 1.5rem;height:1.5rem;"
+                    >
+                      <use xlink:href="#iconjiangjin1"></use>
+                    </svg>
+                  </p>
+                  <p>奖金</p>
+                </a>
+                </div>
+                <div>
+                    <a href="../../html/my/my.html">
+                  <p>
+                    <svg
+                      class="icon"
+                      aria-hidden="true"
+                      style="width: 1.5rem;height:1.5rem;"
+                    >
+                      <use xlink:href="#iconwode1"></use>
+                    </svg>
+                  </p>
+                  <p>我的</p>
+                </a>
+                </div>
+              </div>
         
 
     </div>  

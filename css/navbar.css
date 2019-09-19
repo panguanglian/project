@@ -1,0 +1,36 @@
+.navbars {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top:0.5rem; 
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+  }
+  .navbars div {
+    width: 20%;
+    height: 3rem;
+  }
+  .navbars div p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+  .navbars div p:nth-child(2) {
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    color: #9698a6;
+  }
+  .navbars div p:nth-child(2).active {
+    color: #0090fa;
+  }
+  .di{
+    height: 3.5rem;
+  }
+  a{
+    text-decoration:none;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+
+  }
