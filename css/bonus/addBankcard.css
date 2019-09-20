@@ -1,5 +1,8 @@
+*{
+    margin: 0;
+}
 .addBank{
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     padding: 0 1rem;
 }
 .inputList{
@@ -33,4 +36,24 @@
     justify-content: center;
     align-items: center;
     font-size: 0.9rem;
+}
+.navbarss{
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: #0090fa;
+
+} 
+.navbarss p{
+    color: #fff;
+} 
+a{
+text-decoration:none;
+-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+
+} 
+[v-cloak]{
+    display: none;
 }

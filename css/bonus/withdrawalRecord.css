@@ -54,3 +54,20 @@
         font-size: 1rem;
 
 }
+.navbarss{
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: #0090fa;
+
+} 
+.navbarss p{
+    color: #fff;
+} 
+a{
+text-decoration:none;
+-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+
+} 

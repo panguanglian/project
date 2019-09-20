@@ -16,6 +16,15 @@
   </head>
   <body>
     <div class="app">
+        <div class="navbarss">
+            <p>
+                <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
+                    <use xlink:href="#iconfanhui"></use>
+                </svg>
+            </p>
+            <p></p>
+            <p></p>
+        </div>
       <div class="boxContent">
         <div class="navBox">
           <div class="navIcon">
@@ -30,7 +39,7 @@
         </p>
       </div>
       <div class="contentCenter">
-        <div class="combackBtn">返回</div>
+        <div class="combackBtn" @click="comback">返回</div>
       </div>
     </div>
   </body>
@@ -39,7 +48,11 @@
     var app = new Vue({
       el: ".app",
       data: {},
-      methods: {}
+      methods: {
+        comback(){
+          window.location.href='./bonusInfo.html'
+        }
+      }
     });
   </script>
 </html>

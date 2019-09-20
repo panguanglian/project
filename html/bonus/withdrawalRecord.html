@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/bonus/withdrawalRecord.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <title>提现记录</title>
     <style>
         *{
@@ -15,6 +17,15 @@
 </head>
 <body>
     <div class="app">
+            <div class="navbarss">
+                    <p>
+                        <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
+                            <use xlink:href="#iconfanhui"></use>
+                        </svg>
+                    </p>
+                    <p>{{title}}</p>
+                    <p></p>
+                </div>
        <div class="titleNav">
            <div :class="indexNum==index?'active':''" v-for='(item,index) in titleNavlist' @click="change(index)">{{item}}</div>
        </div>
@@ -45,6 +56,7 @@
     var app = new Vue({
         el:'.app',
         data:{
+            title:'提现记录',
             titleNavlist:['审核中','已打款'],
             indexNum:0,
             arrlist:[],
@@ -64,6 +76,9 @@
                 }else if(index==1){
                     this.arrlist=this.listssss
                 }
+            },
+            comback(){
+                window.history.back(-1)
             }
         }
     })
