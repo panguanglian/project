@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/my/modifyBankCard.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
     <title>确认修改</title>
     <style>
@@ -18,15 +20,9 @@
         }
         
         .backtrack {
-            width: 2rem;
-            height: 2rem;
             position: absolute;
-            top: 0;
+            top: 0.3rem;
             left: 0;
-            color: white;
-            text-align: center;
-            line-height: 2rem;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -34,34 +30,35 @@
 <body>
     <div class="app">
         <div class="headFence">修改银行卡</div>
-        <div class="backtrack" @click='backtrack'>
-            <</div>
-                <div class="bankContent">
-                    <div class="bankBox">
-                        <span>持卡人</span>
-                        <input type="text" placeholder="张立">
-                    </div>
-                    <div class="bankBox">
-                        <span>卡&nbsp;&nbsp;&nbsp;号</span>
-                        <input type="text" placeholder="4564 2454 1135 124">
-                    </div>
-                    <div class="bankBox">
-                        <span>发卡行</span>
-                        <input type="text" placeholder="中国工商银行">
-                    </div>
-                    <div class="bankBox">
-                        <span>开户行</span>
-                        <input type="text" placeholder="广东山湛江麻遂路支行">
-                    </div>
+        <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;  z-index: 333;" @click="backtrack">
+                <use xlink:href="#iconfanhui"></use>
+            </svg>
+        <div class="bankContent">
+            <div class="bankBox">
+                <span>持卡人</span>
+                <input type="text" placeholder="张立">
+            </div>
+            <div class="bankBox">
+                <span>卡&nbsp;&nbsp;&nbsp;号</span>
+                <input type="text" placeholder="4564 2454 1135 124">
+            </div>
+            <div class="bankBox">
+                <span>发卡行</span>
+                <input type="text" placeholder="中国工商银行">
+            </div>
+            <div class="bankBox">
+                <span>开户行</span>
+                <input type="text" placeholder="广东山湛江麻遂路支行">
+            </div>
 
-                    <div class="subomitBtn">
-                        确认修改
-                    </div>
-                </div>
-
-
-
+            <div class="subomitBtn">
+                确认修改
+            </div>
         </div>
+
+
+
+    </div>
 </body>
 <script>
     var app = new Vue({

@@ -18,15 +18,9 @@
         }
         
         .backtrack {
-            width: 2rem;
-            height: 2rem;
             position: absolute;
-            top: 0;
+            top: 0.3rem;
             left: 0;
-            color: white;
-            text-align: center;
-            line-height: 2rem;
-            font-weight: bold;
         }
         
         a {
@@ -39,56 +33,57 @@
 <body>
     <div class="app">
         <div class="headFence">我的钱包</div>
-        <div class="backtrack" @click='backtrack'>
-            <</div>
-                <div class="paquet">
-                    <div class="paquetTitle">账户金额(元)</div>
-                    <div class="monnaie">
-                        <div>168,888.00</div>
-                        <div class="right nav">
-                            <svg class="icon " aria-hidden="true" style="height: 1.2rem;width:1.2rem;">
+        <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;  z-index: 333;" @click="backtrack">
+                <use xlink:href="#iconfanhui"></use>
+            </svg>
+        <div class="paquet">
+            <div class="paquetTitle">账户金额(元)</div>
+            <div class="monnaie">
+                <div>168,888.00</div>
+                <div class="right nav">
+                    <svg class="icon " aria-hidden="true" style="height: 1.2rem;width:1.2rem;">
                                 <use xlink:href="#iconyoujiantou-copy"></use>
                             </svg>
-                        </div>
-                    </div>
                 </div>
-                <div class="cardBag">
-                    <div class="cards" v-for='(item,index) in iscards' @click='isCards(index)'>
-                        <div class="logo">
-
-                        </div>
-                        <div class="info">
-                            <div class="usName">
-                                <div>{{item.Name}}</div>
-                                <div class="right">{{item.userName}}</div>
-                            </div>
-                            <div class="idCaer">
-                                <div>****</div>
-                                <div>****</div>
-                                <div>****</div>
-                                <div>{{item.caerNum}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="addCarb">添加银行卡</div>
-                </div>
-                <div class="isModal" @click="shut" v-if='show'>
-
-                </div>
-                <div class="modal fadelogIn" v-if='shows'>
-                    <div style="color: red;" @click='deletes'>删除</div>
-                    <a href="modifyBankCard.html">
-                        <div @click='alter'>修改</div>
-                    </a>
-                </div>
-                <div class="confirm" v-if='confirms'>
-                    <div class="hint">确定删除改银行卡</div>
-                    <div class="choice">
-                        <div style="border-right: #d4d1d1 solid 0.05rem; color: #9597A6;" @click='shut'>否</div>
-                        <div style="color: #0090FA;" @click='del'>是</div>
-                    </div>
-                </div>
+            </div>
         </div>
+        <div class="cardBag">
+            <div class="cards" v-for='(item,index) in iscards' @click='isCards(index)'>
+                <div class="logo">
+
+                </div>
+                <div class="info">
+                    <div class="usName">
+                        <div>{{item.Name}}</div>
+                        <div class="right">{{item.userName}}</div>
+                    </div>
+                    <div class="idCaer">
+                        <div>****</div>
+                        <div>****</div>
+                        <div>****</div>
+                        <div>{{item.caerNum}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="addCarb">添加银行卡</div>
+        </div>
+        <div class="isModal" @click="shut" v-if='show'>
+
+        </div>
+        <div class="modal fadelogIn" v-if='shows'>
+            <div style="color: red;" @click='deletes'>删除</div>
+            <a href="modifyBankCard.html">
+                <div @click='alter'>修改</div>
+            </a>
+        </div>
+        <div class="confirm" v-if='confirms'>
+            <div class="hint">确定删除改银行卡</div>
+            <div class="choice">
+                <div style="border-right: #d4d1d1 solid 0.05rem; color: #9597A6;" @click='shut'>否</div>
+                <div style="color: #0090FA;" @click='del'>是</div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="../../js/vue.js"></script>

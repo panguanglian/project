@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="../../css/my/invoiceDetails.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <title>发票详情</title>
@@ -13,28 +15,44 @@
         * {
             margin: 0;
         }
-
-       
+        
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
+        
+        .backtrack {
+            position: absolute;
+            top: 0.3rem;
+            left: 0;
+        }
     </style>
 </head>
 
 <body>
     <div class="app">
-            <div class="reserve" v-for='(item,index) in aninvoice'>
-                    <div>
-                        <div>发票代码：</div>
-                        <div>{{item.reserveId}}</div>
-                        
-                    </div>
-                    <div>
-                        <div>发票号码：</div>
-                        <div>{{item.reserveId}}</div>
-                    </div>
-                    <div>
-                        <div>开票时间：</div>
-                        <div>{{item.time}}</div>
-                    </div>
-                </div>
+        <div class="headFence">发票详情</div>
+        <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="backtrack">
+                    <use xlink:href="#iconfanhui"></use>
+                </svg>
+        <div class="reserve" v-for='(item,index) in aninvoice'>
+            <div>
+                <div>发票代码：</div>
+                <div>{{item.reserveId}}</div>
+
+            </div>
+            <div>
+                <div>发票号码：</div>
+                <div>{{item.reserveId}}</div>
+            </div>
+            <div>
+                <div>开票时间：</div>
+                <div>{{item.time}}</div>
+            </div>
+        </div>
         <div class="reserve" v-for='(item,index) in reserve'>
             <div>
                 <div>订单编号：</div>
@@ -93,30 +111,43 @@
             </div>
 
         </div>
-        
+
         <div class="invoiceBtn">
             开票
         </div>
     </div>
 </body>
 <script>
-
     var app = new Vue({
         el: '.app',
         data: {
-            reserve: [
-                { reserveId: '6154235415654875', time: '2019.08.22 12:25:32', money: '54213.00' }
-            ],
-            invoice: [
-                { content: '商品明细', invoiceTitle: '单位', titleName: '深圳市跨越新科技有限公司', tax: '91440522AB85PUIQWW', telephone: '020-85674563', site: '广州珠江新城保利克络维B幢', bank: '招商银行', card: '1245663222323333', phone: '13546245875', email: 'Zhangdadawuhuarou@163.vip.com' },
+            reserve: [{
+                reserveId: '6154235415654875',
+                time: '2019.08.22 12:25:32',
+                money: '54213.00'
+            }],
+            invoice: [{
+                    content: '商品明细',
+                    invoiceTitle: '单位',
+                    titleName: '深圳市跨越新科技有限公司',
+                    tax: '91440522AB85PUIQWW',
+                    telephone: '020-85674563',
+                    site: '广州珠江新城保利克络维B幢',
+                    bank: '招商银行',
+                    card: '1245663222323333',
+                    phone: '13546245875',
+                    email: 'Zhangdadawuhuarou@163.vip.com'
+                },
                 // {content: '商品明细', invoiceTitle: '个人', titleName: '张大大五花肉店',}
             ],
-            aninvoice:[
+            aninvoice: [
                 // {code:'044031800311',reserveId:'6154235415654875',time:'2019.08.22 12:25:32'}
             ]
         },
         methods: {
-
+            backtrack() {
+                window.history.go(-1)
+            },
         }
     })
 </script>

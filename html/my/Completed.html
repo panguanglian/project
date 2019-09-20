@@ -19,8 +19,7 @@
             color: white;
             line-height: 0.5rem;
         }
-        
-        .backtrack {
+        /* .backtrack {
             width: 2rem;
             height: 2rem;
             position: absolute;
@@ -30,6 +29,12 @@
             text-align: center;
             line-height: 2rem;
             font-weight: bold;
+        } */
+        
+        .backtrack {
+            position: absolute;
+            top: 0.3rem;
+            left: 0;
         }
     </style>
 </head>
@@ -37,55 +42,57 @@
 <body style="height:100%;">
     <div class="app">
         <div class="headFence"></div>
-        <div class="backtrack" @click='backtrack'>
-            <</div>
-                <div class="headerTitle">
-                    <svg class="icon iconfonts" aria-hidden="true">
+        <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;  z-index: 333;" @click="backtrack">
+                <use xlink:href="#iconfanhui"></use>
+            </svg>
+
+        <div class="headerTitle">
+            <svg class="icon iconfonts" aria-hidden="true">
                     <use xlink:href="#iconyiwancheng" ></use>
                 </svg> 已完成
-                    <div class="boxthite"></div>
+            <div class="boxthite"></div>
+        </div>
+
+        <div class="content">
+            <div class="cneterBox">
+                <div class="functions">
+                    <span>订单编号：</span>
+                    <p class="dingdan">6154235415654875</p>
+                    <span class="checkeds">查看订单</span>
+                </div>
+                <div class="functions">
+                    <span>订单状态：</span>
+                    <p class="dingdannum">已完成</p>
                 </div>
 
-                <div class="content">
-                    <div class="cneterBox">
-                        <div class="functions">
-                            <span>订单编号：</span>
-                            <p class="dingdan">6154235415654875</p>
-                            <span class="checkeds">查看订单</span>
-                        </div>
-                        <div class="functions">
-                            <span>订单状态：</span>
-                            <p class="dingdannum">已完成</p>
-                        </div>
-
-                    </div>
-                    <div class="content-neirong">
-                        <div class="functions">
-                            <span>售后类型：</span>
-                            <p class="dingdannum">仅退款</p>
-                        </div>
-                        <div class="functions">
-                            <span>申请时间：</span>
-                            <p class="dingdannum">2019.08.22 12:25:32</p>
-                        </div>
-                        <div class="functions">
-                            <span>售后原因：</span>
-                            <p class="dingdannum">机器出现了故障问题，进水的时候会出现机器出现了故障问题，进水的时候会出现机</p>
-                        </div>
-                        <div class="functions">
-                            <span>图片说明：</span>
-                            <div class="dingdannum">
-                                <div class="imgbox">
-                                    <img src="../../image/daffodil.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+            </div>
+            <div class="content-neirong">
+                <div class="functions">
+                    <span>售后类型：</span>
+                    <p class="dingdannum">仅退款</p>
                 </div>
-
+                <div class="functions">
+                    <span>申请时间：</span>
+                    <p class="dingdannum">2019.08.22 12:25:32</p>
+                </div>
+                <div class="functions">
+                    <span>售后原因：</span>
+                    <p class="dingdannum">机器出现了故障问题，进水的时候会出现机器出现了故障问题，进水的时候会出现机</p>
+                </div>
+                <div class="functions">
+                    <span>图片说明：</span>
+                    <div class="dingdannum">
+                        <div class="imgbox">
+                            <img src="../../image/daffodil.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
+
+
+    </div>
 </body>
 <script src="../../js/vue.js"></script>
 <script src="../../js/iconfont.js"></script>

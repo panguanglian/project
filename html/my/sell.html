@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="../../css/my/sell.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <title>售后</title>
@@ -23,15 +25,14 @@
         }
         
         .backtrack {
-            width: 2rem;
-            height: 2rem;
             position: absolute;
-            top: 0;
+            top: 0.3rem;
             left: 0;
-            color: white;
-            text-align: center;
-            line-height: 2rem;
-            font-weight: bold;
+        }
+        
+        a {
+            text-decoration: none;
+            color: red;
         }
     </style>
 </head>
@@ -39,22 +40,24 @@
 <body>
     <div class="app">
         <div class="headFence">售后</div>
-        <div class="backtrack" @click='backtrack'>
-            <</div>
-                <div class="sell">
-                    <template>
+        <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;  z-index: 333;" @click="backtrack">
+                <use xlink:href="#iconfanhui"></use>
+            </svg>
+        <div class="sell">
+            <template>
                 <el-tabs v-model="activeName" @tab-click="handleClick">
                     <el-tab-pane label="待处理" name="first">
                         <div class="pending" v-for='(item,index) in pending'>
                             <div class="reserveMark">
                                 <div style="flex: 2;">订单号：{{item.resMark}}</div>
-                                <div style="flex: 1;">{{item.resGenre}}</div>
+                                <div style="flex: 1;"><a :href="item.url">{{item.resGenre}}</a></div>
                             </div>
                             <div class="reserveInfo">
                                 <div class="img"></div>
                                 <div class="info">
                                     <div>{{item.resTitle}}</div>
                                     <div style="color: #9597A6;">{{item.subjoin}}</div>
+                                    
                                     <div v-if='item.money'>退款金额：<span style="color: #FF4536;">{{item.money}}</span></div>
                                 </div>
                             </div>
@@ -70,7 +73,7 @@
                             <div class="pending" v-for='(item,index) in underway'>
                                     <div class="reserveMark">
                                         <div style="flex: 2;">订单号：{{item.resMark}}</div>
-                                        <div style="flex: 1;">{{item.resGenre}}</div>
+                                        <div style="flex: 1;"><a :href="item.url">{{item.resGenre}}</a></div>
                                     </div>
                                     <div class="reserveInfo">
                                         <div class="img"></div>
@@ -113,11 +116,11 @@
 
                 </el-tabs>
             </template>
-                </div>
-
-
-
         </div>
+
+
+
+    </div>
 </body>
 <script>
     var app = new Vue({
@@ -131,7 +134,8 @@
                 resTitle: '中化石油加油卡礼包',
                 subjoin: '内含一张1000元加油卡',
                 money: '¥7084.00',
-                time: '2019.08.22 12:25:32'
+                time: '2019.08.22 12:25:32',
+                url: 'refund.html',
             }, {
                 resMark: '8465412547854125',
                 resImg: '',
@@ -139,11 +143,13 @@
                 resTitle: '中化石油加油卡礼包',
                 subjoin: '内含一张1000元加油卡',
                 money: '¥7084.00',
+                url: 'Returngoods.html',
                 time: '2019.08.22 12:25:32'
             }, {
                 resMark: '6154235415654875',
                 resImg: '',
                 resGenre: '维修申请',
+                url: 'Repair.html',
                 resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
                 subjoin: '免费领取安装、换新机、检测维…',
                 money: '',
@@ -152,6 +158,7 @@
                 resMark: '8465412547854125',
                 resImg: '',
                 resGenre: '换货申请',
+                url: 'Exchangegoods.html',
                 resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
                 subjoin: '免费领取安装、换新机、检测维…',
                 money: '',
@@ -161,6 +168,7 @@
                 resMark: '6154235415654875',
                 resImg: '',
                 resGenre: '退款申请',
+                url: 'refund.html',
                 resTitle: '中化石油加油卡礼包',
                 subjoin: '内含一张1000元加油卡',
                 money: '¥7084.00',
@@ -169,6 +177,7 @@
                 resMark: '8465412547854125',
                 resImg: '',
                 resGenre: '退货退款申请',
+                url: 'Returngoods.html',
                 resTitle: '中化石油加油卡礼包',
                 subjoin: '内含一张1000元加油卡',
                 money: '¥7084.00',
@@ -177,6 +186,7 @@
                 resMark: '6154235415654875',
                 resImg: '',
                 resGenre: '维修申请',
+                url: 'Repair.html',
                 resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
                 subjoin: '免费领取安装、换新机、检测维…',
                 money: '',
@@ -185,6 +195,7 @@
                 resMark: '8465412547854125',
                 resImg: '',
                 resGenre: '换货申请',
+                url: 'Exchangegoods.html',
                 resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
                 subjoin: '免费领取安装、换新机、检测维…',
                 money: '',
