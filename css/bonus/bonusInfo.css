@@ -86,3 +86,35 @@
 [v-cloak]{
     display: none;
 }
+.block{
+    width: 100%;
+}
+.moreData-tip,
+.loadingMoreData-tip,
+.noMoreData-tip {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 50px;
+}
+@keyframes rotating {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(1turn);
+}
+}
+.connectingLine {
+display: inline-flex;
+width: 150px;
+height: 2px;
+background: #ddd;
+margin-left: 20px;
+margin-right: 20px;
+}
+a{
+text-decoration:none;
+-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+
+}
