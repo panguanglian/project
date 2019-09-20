@@ -1,0 +1,63 @@
+{
+    "count": 4,
+    "pageNo": 1,
+    "list": [
+        {
+            "isNewRecord": false,
+            "id": "789",
+            "clId": "789",
+            "clName": "海露中航国际5A净水系统",
+            "clMoney": "3500.00",
+            "clType": 1,
+            "clBusiness": "1",
+            "clNumber": 20,
+            "clCreatedat": "2019-09-18 16:36:00",
+            "clUpdatedat": "2019-09-18 16:36:00",
+            "clBanned": 1,
+            "clPicture": "123"
+        },
+        {
+            "isNewRecord": false,
+            "id": "456",
+            "clId": "456",
+            "clName": "海露中航国际5A净水系统",
+            "clMoney": "3500.00",
+            "clType": 1,
+            "clBusiness": "1",
+            "clNumber": 20,
+            "clCreatedat": "2019-09-18 15:51:00",
+            "clUpdatedat": "2019-09-18 15:51:00",
+            "clBanned": 1,
+            "clPicture": "123"
+        },
+        {
+            "isNewRecord": false,
+            "id": "123",
+            "clId": "123",
+            "clName": "中石化加油券中石化加油券",
+            "clMoney": "192.00",
+            "clType": 3,
+            "clBusiness": "1",
+            "clNumber": 20,
+            "clCreatedat": "2019-09-18 09:19:22",
+            "clUpdatedat": "2019-09-18 09:19:00",
+            "clBanned": 1,
+            "clPicture": "123"
+        },
+        {
+            "isNewRecord": false,
+            "id": "1174507818100666368",
+            "clId": "1174507818100666368",
+            "clName": "海露中航国际5A净水系统",
+            "clMoney": "3600.00",
+            "clType": 1,
+            "clBusiness": "1",
+            "clNumber": 20,
+            "clCreatedat": "2019-09-19 10:17:00",
+            "clUpdatedat": "2019-09-19 10:17:00",
+            "clBanned": 1,
+            "clPicture": "123"
+        }
+    ],
+    "pageSize": 20
+}

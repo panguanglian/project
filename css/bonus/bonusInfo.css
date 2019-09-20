@@ -83,3 +83,6 @@
 .gray{
     color: #9597a6;
 }
+[v-cloak]{
+    display: none;
+}
