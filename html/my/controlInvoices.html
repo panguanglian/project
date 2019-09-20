@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,40 @@
             margin: 0;
         }
         
+        .headFence {
+            position: fixed;
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+            top: 0;
+            left: 0;
+            width: 94%;
+            z-index: 222;
+        }
+        
+        .backtrack {
+            width: 2rem;
+            height: 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+            z-index: 223;
+        }
     </style>
 </head>
+
 <body>
     <div class="app">
-            <div class="sell">
+        <div class="headFence">发票管理</div>
+        <div class="backtrack" @click='backtrack'>
+            <</div>
+                <div class="sell">
                     <template>
                         <el-tabs v-model="activeName" @tab-click="handleClick">
                             <el-tab-pane label="待开发票" name="first">
@@ -71,30 +101,60 @@
                         </el-tabs>
                     </template>
                 </div>
-        
-        
-        
 
-    </div>
+
+
+
+        </div>
 </body>
 <script>
-    
     var app = new Vue({
-        el:'.app',
-        data:{
+        el: '.app',
+        data: {
             activeName: 'first',
-            pending: [
-                { resMark: '6154235415654875', resImg: '', resGenre: '单位',resTitle:'深圳市跨越新科技有限公司',subjoin:'内含一张1000元加油卡',money:'514243542.000',time:'2019.08.22 12:25:32'},
-                { resMark: '8465412547854125', resImg: '', resGenre: '个人',resTitle:'深圳市跨越新科技有限公司',subjoin:'内含一张1000元加油卡',money:'514243542.00',time:'2019.08.22 12:25:32'},
-                { resMark: '6154235415654875', resImg: '', resGenre: '单位',resTitle:'深圳市跨越新科技有限公司',subjoin:'免费领取安装、换新机、检测维…',money:'514243542',time:'2019.08.22 12:25:32'},
-                { resMark: '8465412547854125', resImg: '', resGenre: '个人',resTitle:'深圳市跨越新科技有限公司',subjoin:'免费领取安装、换新机、检测维…',money:'514243542',time:'2019.08.22 12:25:32'}
-            ],
+            pending: [{
+                resMark: '6154235415654875',
+                resImg: '',
+                resGenre: '单位',
+                resTitle: '深圳市跨越新科技有限公司',
+                subjoin: '内含一张1000元加油卡',
+                money: '514243542.000',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '8465412547854125',
+                resImg: '',
+                resGenre: '个人',
+                resTitle: '深圳市跨越新科技有限公司',
+                subjoin: '内含一张1000元加油卡',
+                money: '514243542.00',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '6154235415654875',
+                resImg: '',
+                resGenre: '单位',
+                resTitle: '深圳市跨越新科技有限公司',
+                subjoin: '免费领取安装、换新机、检测维…',
+                money: '514243542',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '8465412547854125',
+                resImg: '',
+                resGenre: '个人',
+                resTitle: '深圳市跨越新科技有限公司',
+                subjoin: '免费领取安装、换新机、检测维…',
+                money: '514243542',
+                time: '2019.08.22 12:25:32'
+            }],
         },
-        methods:{
+        methods: {
             handleClick(tab, event) {
                 console.log(tab, event);
-            }
+            },
+            backtrack() {
+                window.history.go(-1)
+            },
         }
     })
 </script>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,55 +8,91 @@
     <script src="../../js/vue.js"></script>
     <title>消息详情</title>
     <style>
-        *{margin: 0;}
-        .contents{
+        * {
+            margin: 0;
+        }
+        
+        .contents {
             padding: 1rem 0.5rem;
             box-sizing: border-box;
         }
-        .contents h4{
+        
+        .contents h4 {
             font-size: 1rem;
             color: #030303;
         }
-        .times{
+        
+        .times {
             margin: 0.2rem 0;
             font-size: 0.8rem;
             color: #9597A6;
         }
-        .img{
+        
+        .img {
             width: 100%;
             margin: 1rem 0;
         }
-        .img img{
+        
+        .img img {
             width: 100%;
             border-radius: 0.5rem;
-
         }
-        .test{
+        
+        .test {
             margin-top: 1rem;
             font-size: 0.9rem;
             color: #707070
         }
+        
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
+        
+        .backtrack {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
     <div class="app">
-        <div class="contents">
-               <h4>近段时间拉进来房间看到了房价就</h4>
-               <p class="times">
-                    2019年07月12号 14.52.21
-               </p>
-               <div class="img">
-               </div>
-               <p class="test">
-                    这里是内容
-               </p>
+        <div class="headFence">消息详情</div>
+        <div class="backtrack" @click='backtrack'>
+            <</div>
+                <div class="contents">
+                    <h4>近段时间拉进来房间看到了房价就</h4>
+                    <p class="times">
+                        2019年07月12号 14.52.21
+                    </p>
+                    <div class="img">
+                    </div>
+                    <p class="test">
+                        这里是内容
+                    </p>
+                </div>
         </div>
-    </div>
 </body>
 <script>
-    
     var app = new Vue({
-        el:'.app',
+        el: '.app',
+        methods: {
+            backtrack() {
+                window.history.go(-1)
+            }
+        }
     })
 </script>
+
 </html>

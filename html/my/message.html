@@ -10,80 +10,131 @@
     <script src="../../js/iconfont.js"></script>
     <title>信息中心</title>
     <style>
-       
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
+        
+        .backtrack {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 
 <body>
     <div class="app">
-        <div class="message">
-            <div class="without" :class='[info=="" ? "show" : "heid"]'>
-                <div class="infoIcon">
-                    <svg class="icon" aria-hidden="true" style="width: 5rem;height:5rem;">
+        <div class="headFence">信息中心</div>
+        <div class="backtrack" @click='backtrack'>
+            <</div>
+                <div class="message">
+                    <div class="without" :class='[info=="" ? "show" : "heid"]'>
+                        <div class="infoIcon">
+                            <svg class="icon" aria-hidden="true" style="width: 5rem;height:5rem;">
                         <use xlink:href="#iconmeiyouxiaoxi"></use>
                     </svg>
-                </div>
-                <div>暂时没有任何消息</div>
-            </div>
-            <div class="infoBox" v-for='(item,index) in info'>
-                <div class="time">{{item.time}}</div>
-                <div class="info">
-                    <div class="infoTitle">{{item.title}}</div>
-                    <div class='infoContent'>
-                        {{item.infoContent}}
+                        </div>
+                        <div>暂时没有任何消息</div>
                     </div>
-                    <!-- <div class="infoImg"><img :src="item.infoImg" alt=""></div> -->
-                    <img :src="item.infoImg" alt="" class="infoImg">
-                </div>
-            </div>
-            <div class="infoBox" v-for='(item,index) in longTitle'>
-                <div class="time">{{item.time}}</div>
-                <div class="info">
-                    <div class="infoTitle">{{item.title}}</div>
-                    <div class="particulars">查看详情<div style="float: right">
-                            <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;">
+                    <div class="infoBox" v-for='(item,index) in info'>
+
+                        <div class="time">{{item.time}}</div>
+                        <a href="testCenter.html">
+                            <div class="info">
+                                <div class="infoTitle">{{item.title}}</div>
+                                <div class='infoContent'>
+                                    {{item.infoContent}}
+                                </div>
+                                <!-- <div class="infoImg"><img :src="item.infoImg" alt=""></div> -->
+                                <img :src="item.infoImg" alt="" class="infoImg">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="infoBox" v-for='(item,index) in longTitle'>
+                        <div class="time">{{item.time}}</div>
+                        <a href="testCenter.html">
+                            <div class="info">
+                                <div class="infoTitle">{{item.title}}</div>
+                                <div class="particulars">查看详情
+                                    <div style="float: right">
+                                        <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;">
                                 <use xlink:href="#iconyoujiantou"></use>
                             </svg>
-                    </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-    </div>
+        </div>
 </body>
 <script src="../../js/vue.js"></script>
 <script>
-
     var app = new Vue({
         el: '.app',
         data: {
-            info:[
-                {id:1,title:'信息标题',time:'2019年07月22号 14:52:21',infoContent:'这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',infoImg:'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566978051&di=00eea714ac95536fa144392d9f605aab&src=http://b.zol-img.com.cn/soft/6/571/cepyVKtIjudo6.jpg'},
-                {id:2,title:'信息标题',time:'2019年07月22号 14:52:21',infoContent:'这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',infoImg:''},
-                {id:3,title:'阿猫阿狗阿猫阿狗阿猫阿狗阿猫阿狗信息标题信信息信息标题',time:'2019年07月22号 14:52:21',infoContent:'这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',infoImg:'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566978051&di=00eea714ac95536fa144392d9f605aab&src=http://b.zol-img.com.cn/soft/6/571/cepyVKtIjudo6.jpg'}
-            
+            info: [{
+                    id: 1,
+                    title: '信息标题',
+                    time: '2019年07月22号 14:52:21',
+                    infoContent: '这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',
+                    infoImg: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566978051&di=00eea714ac95536fa144392d9f605aab&src=http://b.zol-img.com.cn/soft/6/571/cepyVKtIjudo6.jpg'
+                }, {
+                    id: 2,
+                    title: '信息标题',
+                    time: '2019年07月22号 14:52:21',
+                    infoContent: '这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',
+                    infoImg: ''
+                }, {
+                    id: 3,
+                    title: '阿猫阿狗阿猫阿狗阿猫阿狗阿猫阿狗信息标题信信息信息标题',
+                    time: '2019年07月22号 14:52:21',
+                    infoContent: '这里展示的为此条消息的内容。想不到此消息内容竟然有如此之多，幸亏我准备的够充足，容量足以容纳这么多的字体，不然的话就要使用大招了，啊猫啊狗,啊猫啊狗啊猫啊狗啊猫啊狗',
+                    infoImg: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566978051&di=00eea714ac95536fa144392d9f605aab&src=http://b.zol-img.com.cn/soft/6/571/cepyVKtIjudo6.jpg'
+                }
+
             ],
-            longTitle:[
-                
+            longTitle: [
+
             ]
         },
         methods: {
-            indexs:function(){
+            indexs: function() {
                 console.log(this.info[2].title.length)
-                for(var i=0;i<this.info.length;i++){
-                    if(this.info[i].title.length>19){
+                for (var i = 0; i < this.info.length; i++) {
+                    if (this.info[i].title.length > 19) {
                         // console.log(i)
-                        
+
                         // console.log(this.info[i])
                         this.longTitle.push(this.info[i])
-                        // console.log(this.longTitle)
-                        this.info.splice(i,1)
+                            // console.log(this.longTitle)
+                        this.info.splice(i, 1)
                     }
                 }
 
-            }
+            },
+            backtrack() {
+                window.history.go(-1)
+            },
+
         },
-        created(){
+        created() {
             this.indexs();
         }
     })

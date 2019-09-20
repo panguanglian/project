@@ -13,15 +13,36 @@
         * {
             margin: 0;
         }
-
-       
+        
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
+        
+        .backtrack {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
     <div class="app">
-        <div class="sell">
-            <template>
+        <div class="headFence">售后</div>
+        <div class="backtrack" @click='backtrack'>
+            <</div>
+                <div class="sell">
+                    <template>
                 <el-tabs v-model="activeName" @tab-click="handleClick">
                     <el-tab-pane label="待处理" name="first">
                         <div class="pending" v-for='(item,index) in pending'>
@@ -92,41 +113,124 @@
 
                 </el-tabs>
             </template>
+                </div>
+
+
+
         </div>
-
-
-
-    </div>
 </body>
 <script>
-
     var app = new Vue({
         el: '.app',
         data: {
             activeName: 'first',
-            pending: [
-                { resMark: '6154235415654875', resImg: '', resGenre: '退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
-                { resMark: '8465412547854125', resImg: '', resGenre: '退货退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
-                { resMark: '6154235415654875', resImg: '', resGenre: '维修申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'},
-                { resMark: '8465412547854125', resImg: '', resGenre: '换货申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'}
-            ],
-            underway:[
-                { resMark: '6154235415654875', resImg: '', resGenre: '退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
-                { resMark: '8465412547854125', resImg: '', resGenre: '退货退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
-                { resMark: '6154235415654875', resImg: '', resGenre: '维修申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'},
-                { resMark: '8465412547854125', resImg: '', resGenre: '换货申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'}
-            ],
-            already:[
-                { resMark: '6154235415654875', resImg: '', resGenre: '退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
-                { resMark: '8465412547854125', resImg: '', resGenre: '退货退款申请',resTitle:'中化石油加油卡礼包',subjoin:'内含一张1000元加油卡',money:'¥7084.00',time:'2019.08.22 12:25:32'},
-                { resMark: '6154235415654875', resImg: '', resGenre: '维修申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'},
-                { resMark: '8465412547854125', resImg: '', resGenre: '换货申请',resTitle:'海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',subjoin:'免费领取安装、换新机、检测维…',money:'',time:'2019.08.22 12:25:32'}
-            ]
+            pending: [{
+                resMark: '6154235415654875',
+                resImg: '',
+                resGenre: '退款申请',
+                resTitle: '中化石油加油卡礼包',
+                subjoin: '内含一张1000元加油卡',
+                money: '¥7084.00',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '8465412547854125',
+                resImg: '',
+                resGenre: '退货退款申请',
+                resTitle: '中化石油加油卡礼包',
+                subjoin: '内含一张1000元加油卡',
+                money: '¥7084.00',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '6154235415654875',
+                resImg: '',
+                resGenre: '维修申请',
+                resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
+                subjoin: '免费领取安装、换新机、检测维…',
+                money: '',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '8465412547854125',
+                resImg: '',
+                resGenre: '换货申请',
+                resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
+                subjoin: '免费领取安装、换新机、检测维…',
+                money: '',
+                time: '2019.08.22 12:25:32'
+            }],
+            underway: [{
+                resMark: '6154235415654875',
+                resImg: '',
+                resGenre: '退款申请',
+                resTitle: '中化石油加油卡礼包',
+                subjoin: '内含一张1000元加油卡',
+                money: '¥7084.00',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '8465412547854125',
+                resImg: '',
+                resGenre: '退货退款申请',
+                resTitle: '中化石油加油卡礼包',
+                subjoin: '内含一张1000元加油卡',
+                money: '¥7084.00',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '6154235415654875',
+                resImg: '',
+                resGenre: '维修申请',
+                resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
+                subjoin: '免费领取安装、换新机、检测维…',
+                money: '',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '8465412547854125',
+                resImg: '',
+                resGenre: '换货申请',
+                resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
+                subjoin: '免费领取安装、换新机、检测维…',
+                money: '',
+                time: '2019.08.22 12:25:32'
+            }],
+            already: [{
+                resMark: '6154235415654875',
+                resImg: '',
+                resGenre: '退款申请',
+                resTitle: '中化石油加油卡礼包',
+                subjoin: '内含一张1000元加油卡',
+                money: '¥7084.00',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '8465412547854125',
+                resImg: '',
+                resGenre: '退货退款申请',
+                resTitle: '中化石油加油卡礼包',
+                subjoin: '内含一张1000元加油卡',
+                money: '¥7084.00',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '6154235415654875',
+                resImg: '',
+                resGenre: '维修申请',
+                resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
+                subjoin: '免费领取安装、换新机、检测维…',
+                money: '',
+                time: '2019.08.22 12:25:32'
+            }, {
+                resMark: '8465412547854125',
+                resImg: '',
+                resGenre: '换货申请',
+                resTitle: '海露中航国际5A净水系统字阿猫阿狗阿猫阿狗阿猫阿狗',
+                subjoin: '免费领取安装、换新机、检测维…',
+                money: '',
+                time: '2019.08.22 12:25:32'
+            }]
         },
         methods: {
             handleClick(tab, event) {
                 console.log(tab, event);
-            }
+            },
+            backtrack() {
+                window.history.go(-1)
+            },
         }
     })
 </script>

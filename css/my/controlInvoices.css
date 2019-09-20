@@ -2,6 +2,10 @@ html {
     background-color: #F1F1F1;
 }
 
+.sell {
+    margin-top: 3rem;
+}
+
 .el-tabs__nav-scroll {
     display: flex;
     justify-content: center;
@@ -24,12 +28,10 @@ html {
 .reserveMark {
     font-size: 0.7rem;
     display: flex;
-    
 }
 
 .reserveMark div:last-child {
     text-align: right;
-    
 }
 
 .reserveTime {
@@ -56,12 +58,10 @@ html {
     height: 4rem;
     background-color: #9597A6;
     margin-right: 5%;
-
 }
 
 .reserveInfo .info {
     width: 75%;
-   
 }
 
 .reserveInfo .info div {
@@ -81,23 +81,28 @@ html {
     border-radius: 1.5rem;
     float: right;
 }
-.el-tabs__nav{
+
+.el-tabs__nav {
     width: 100%;
     display: flex;
 }
-.el-tabs__item{
+
+.el-tabs__item {
     flex: 1;
     text-align: center;
 }
-.reserveMark .gray{
+
+.reserveMark .gray {
     color: #9597A6;
 }
-.el-tabs__nav{
+
+.el-tabs__nav {
     position: fixed;
-    top: 0;
+    top: 2.2rem;
     left: 0;
     background-color: #fff;
 }
-.el-tabs__content{
+
+.el-tabs__content {
     margin-top: 10%;
 }

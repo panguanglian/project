@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,71 @@
     <script src="../../js/vue.js"></script>
     <title>帮助中心</title>
     <style>
-        *{margin: 0;}
-        .contents{padding: 0.5rem 1rem; box-sizing: border-box;color: #707070;}
-        h3{font-size: 0.9rem;font-weight: none; }
-        p{margin-top: 1rem;font-size: 0.8rem;}
+        * {
+            margin: 0;
+        }
         
+        .contents {
+            padding: 0.5rem 1rem;
+            box-sizing: border-box;
+            color: #707070;
+        }
         
+        h3 {
+            font-size: 0.9rem;
+            font-weight: none;
+        }
+        
+        p {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+        
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
+        
+        .backtrack {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
     <div class="app">
-        <div class="contents">
-                
-        </div>
-        
-        
-        
+        <div class="headFence">帮助中心</div>
+        <div class="backtrack" @click='backtrack'>
+            <</div>
+                <div class="contents">
 
-    </div>
+                </div>
+
+
+
+
+        </div>
 </body>
 <script>
-    
     var app = new Vue({
-        el:'.app',
+        el: '.app',
+        methods: {
+            backtrack() {
+                window.history.go(-1)
+            }
+        }
     })
 </script>
+
 </html>
