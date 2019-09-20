@@ -40,6 +40,10 @@
             font-weight: bold;
             z-index: 223;
         }
+        
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -47,9 +51,13 @@
     <div class="app">
         <div class="headFence">发票管理</div>
         <div class="backtrack" @click='backtrack'>
-            <</div>
-                <div class="sell">
-                    <template>
+            <svg class="icon"  aria-hidden="true"  style="width:1.2rem; height:1.2rem; z-index: 233;">
+
+                <use xlink:href="#iconfanhui"></use>
+                    </svg>
+        </div>
+        <div class="sell">
+            <template>
                         <el-tabs v-model="activeName" @tab-click="handleClick">
                             <el-tab-pane label="待开发票" name="first">
                                 <div class="pending" v-for='(item,index) in pending'>
@@ -69,7 +77,9 @@
                                     <div class="reserveTime">
                                         <div style="flex: 2; color: #FF4536; font-size: 1rem;">¥{{item.money}}</div>
                                         <div style="flex: 1;">
+                                            <a href="invoiceDetails.html">
                                             <div class="check">开票</div>
+                                        </a>
                                         </div>
                                     </div>
                                 </div>
@@ -100,12 +110,12 @@
                             
                         </el-tabs>
                     </template>
-                </div>
-
-
-
-
         </div>
+
+
+
+
+    </div>
 </body>
 <script>
     var app = new Vue({
