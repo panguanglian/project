@@ -11,21 +11,7 @@
     <script src="../../js/iconfont.js"></script>
     <title>提现</title>
     <style>
-        * {
-            margin: 0;
-        }
-        .navbarss{
-            height: 2.5rem;
-            width: 100%;
-            display: flex;
-            justify-content:space-between;
-            align-items: center;
-            background: #0090fa;
-
-        } 
-        .navbarss p{
-            color: #fff;
-        }  
+        
     </style>
 </head>
 
@@ -70,7 +56,7 @@
             </div>
         </div>
         <div class="apply" @click='apply'>提交申请</div>
-        <div class="record" @click='record'>提现记录</div>
+        <div class="record" ><a href="./withdrawalRecord.html">提现记录</a> </div>
         
         <div class="isModal" @click="shut" v-if='show'>
 
@@ -84,8 +70,7 @@
                 <div class="radios"><input type="radio" name="a" @click='pitchon(index)' :checked='item.checked'></div>
 
             </div>
-            <div class="modalTitle silver" @click='add'>添加银行卡</div>
-
+            <a href="./addBankcard.html"><div class="modalTitle silver" @click='add'>添加银行卡</div></a>
         </div>
     </div>
 </body>
@@ -112,6 +97,10 @@
             }
         },
         methods: {
+            apply(){
+                
+
+            },
             add() {
                 this.show = false
             },
@@ -135,11 +124,9 @@
 
             },
             apply() {
-                console.log('提交申请')
+                window.location.href='./SubmissionStatus.html'
             },
-            record() {
-                console.log('提现记录')
-            },
+           
             all() {
                 this.isall = this.sall
             },

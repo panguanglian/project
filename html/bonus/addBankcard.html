@@ -5,51 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/bonus/addBankcard.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <link rel="stylesheet" href="../../css/element.css">
     <title>添加银行卡</title>
-    <style>
-        *{
-            margin: 0;
-        }
-        
-
-
-        
-        
+    <style>     
     </style> 
 </head>
 <body>
-    <div class="app">
+    <div class="app" v-cloak>
+            <div class="navbarss">
+                    <p>
+                        <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
+                            <use xlink:href="#iconfanhui"></use>
+                        </svg>
+                    </p>
+                    <p>
+                        {{title}}
+                    </p>
+                    <p></p>
+            </div>
         <div class="addBank">
             <div class="inputList">
                 <p>持卡人</p>
-                <input type="text" placeholder="请输入持卡人的姓名">
+                <input type="text" placeholder="请输入持卡人的姓名" v-model="userName">
             </div>
             <div class="inputList">
                     <p>卡&nbsp;&nbsp;&nbsp;&nbsp;号</p>
-                    <input type="text" placeholder="请输入银行卡卡号">
+                    <input type="text" placeholder="请输入银行卡卡号" v-model="bankNum">
                 </div>
                 <div class="inputList">
                         <p>开户行</p>
-                        <input type="text" placeholder="请输银行卡开户行">
+                        <input type="text" placeholder="请输银行卡开户行" v-model="bankName">
                     </div>
         </div>
         <div class="addBankBtnbox">
-                <div class="addBankBtn">添加卡号</div>
+                <div class="addBankBtn" @click="addBankcard" :plain="true">添加卡号</div>
         </div>
-        
-      
+
     </div>
 </body>
 <script src="../../js/vue.js"></script>
+<script src="../../js/element.js"></script>
+<script src="../../js/iconfont.js"></script>
 <script>
     
     var app = new Vue({
         el:'.app',
         data:{
-            
+            title:'添加银行卡',
+            userName:'',
+            bankNum:'',
+            bankName:'',
+            dsafdf:false,
+            text:'',
+            times:3,
         },
         methods:{
-           
+            addBankcard(){
+                if(this.userName == ''||this.bankNum == ''||this.bankName == ''){
+                    this.$message({
+                    message: '输入内容有误',
+                    type: 'warning'
+                    });
+                }else{
+                    this.$message({
+                        message: '添加成功，'+this.times+'秒后自动返回',
+                        type: 'success'
+                    });
+                    setTimeout(()=>{
+                        window.history.back(-1)
+                    },3100)
+                    
+                }
+            },
+            comback(){
+                window.history.back(-1)
+            }
         }
     })
 </script>
