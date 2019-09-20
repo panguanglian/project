@@ -15,7 +15,7 @@
             margin: 0;
         }
         .navbarss{
-            height: 3rem;
+            height: 2.5rem;
             width: 100%;
             display: flex;
             justify-content:space-between;
@@ -33,7 +33,7 @@
     <div class="app">
         <div class="navbarss">
             <p>
-                <svg class="icon" aria-hidden="true" style="height: 1.2rem;width:1.2rem;">
+                <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
                     <use xlink:href="#iconfanhui"></use>
                 </svg>
             </p>
@@ -142,9 +142,10 @@
             },
             all() {
                 this.isall = this.sall
+            },
+            comback(){
+                window.history.back(-1)
             }
-
-
         }
     })
 </script>
