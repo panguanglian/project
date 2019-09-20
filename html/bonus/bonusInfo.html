@@ -9,42 +9,7 @@
     <link rel="stylesheet" href="../../css/navbar.css">
     <title>奖金</title>
     <style>
-        .block{
-            width: 100%;
-        }
-        .moreData-tip,
-      .loadingMoreData-tip,
-      .noMoreData-tip {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 50px;
-      }
-      .loadMoudle .icon-loading {
-        display: inline-flex;
-        width: 35px;
-        height: 35px;
-        background: url(../../assets/images/refreshAndReload/loading.png) no-repeat;
-        background-size: cover;
-        margin-right: 5px;
-        animation: rotating 2s linear infinite;
-      }
-      @keyframes rotating {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(1turn);
-        }
-      }
-      .connectingLine {
-        display: inline-flex;
-        width: 150px;
-        height: 2px;
-        background: #ddd;
-        margin-left: 20px;
-        margin-right: 20px;
-      }
+        
         
     </style>
 </head>
@@ -54,7 +19,11 @@
                 <div class="bonusHead">
                         <div class="title">可提现收入(元)</div>
                         <div class="myMoney">168,888.00</div>
-                        <div><div class="withdrawal">立即提现</div></div>
+                        <div>
+                            <a href="./drawings.html">
+                            <div class="withdrawal">立即提现</div>
+                            </a>
+                        </div>
                         <div class="income">
                             <div>168,888.00</div>
                             <div>168,888.00</div>
@@ -88,9 +57,7 @@
                             <span class="loadingMoreData-tip-text">{{pullUpStateText.loadingMoreDataTxt}}</span>
                           </div>
                           <div class="noMoreData-tip" v-if="pullUpState==3">
-                            <span class="connectingLine"></span>
                             <span class="noMoreData-tip-text">{{pullUpStateText.noMoreDataTxt}}</span>
-                            <span class="connectingLine"></span>
                           </div>
         </div>
     
@@ -188,7 +155,7 @@
             pullUpStateText: {
               moreDataTxt: '上拉加载更多',
               loadingMoreDataTxt: '加载中...',
-              noMoreDataTxt: '我是有底线的'
+              noMoreDataTxt: '没有更多了'
             },
             parentPullUpState: {
                 default: 0
@@ -226,9 +193,12 @@
               if (this.pullUpState !== 3 && !this.isLoading) {
                 this.pullUpState = 1
                 this.infiniteLoad()
-                setTimeout(() => {
-                  this.infiniteLoad()
-                }, 200)
+
+                // if(){
+                //     this.infiniteLoadDone()
+                // }
+                
+               
               }
             }
           },

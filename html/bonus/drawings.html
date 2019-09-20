@@ -6,17 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/bonus/drawings.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
     <script src="../../js/vue.js"></script>
+    <script src="../../js/iconfont.js"></script>
     <title>提现</title>
     <style>
         * {
             margin: 0;
         }
+        .navbarss{
+            height: 2.5rem;
+            width: 100%;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            background: #0090fa;
+
+        } 
+        .navbarss p{
+            color: #fff;
+        }  
     </style>
 </head>
 
 <body>
     <div class="app">
+        <div class="navbarss">
+            <p>
+                <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
+                    <use xlink:href="#iconfanhui"></use>
+                </svg>
+            </p>
+            <p>
+                提现
+            </p>
+            <p></p>
+        </div>
         <div class="drawingsBox">
             <div class="myMoney">168,888.00</div>
             <div class="explain">可提现收入(元)</div>
@@ -117,9 +142,10 @@
             },
             all() {
                 this.isall = this.sall
+            },
+            comback(){
+                window.history.back(-1)
             }
-
-
         }
     })
 </script>
