@@ -27,11 +27,15 @@
             text-decoration: none;
             color: black;
         }
+        
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div class="app">
+    <div class="app" v-cloak>
         <div class="headFence">我的钱包</div>
         <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;  z-index: 333;" @click="backtrack">
                 <use xlink:href="#iconfanhui"></use>
@@ -65,7 +69,9 @@
                     </div>
                 </div>
             </div>
-            <div class="addCarb">添加银行卡</div>
+            <a href="../bonus/addBankcard.html">
+                <div class="addCarb">添加银行卡</div>
+            </a>
         </div>
         <div class="isModal" @click="shut" v-if='show'>
 

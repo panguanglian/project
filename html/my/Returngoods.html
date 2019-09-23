@@ -25,11 +25,15 @@
             top: 0.3rem;
             left: 0;
         }
+        
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
 
 <body style="height:100%;">
-    <div class="app">
+    <div class="app" v-cloak>
         <div class="headFence"></div>
         <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;  z-index: 333;" @click="backtrack">
                     <use xlink:href="#iconfanhui"></use>

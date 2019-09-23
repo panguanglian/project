@@ -29,11 +29,19 @@
             top: 0.3rem;
             left: 0;
         }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div class="app">
+    <div class="app" v-cloak>
         <div class="headFence">发票详情</div>
         <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="backtrack">
                     <use xlink:href="#iconfanhui"></use>
@@ -111,10 +119,11 @@
             </div>
 
         </div>
-
-        <div class="invoiceBtn">
-            开票
-        </div>
+        <a href="aninvoice.html">
+            <div class="invoiceBtn">
+                开票
+            </div>
+        </a>
     </div>
 </body>
 <script>
