@@ -7,17 +7,49 @@
     <link rel="stylesheet" href="../../css/order/dingdan.css" />
     <link rel="stylesheet" href="../../css/order/orderDetails.css" />
     <link rel="stylesheet" href="../../css/iconFont/iconfont.css" />
+    <link rel="stylesheet" href="../../css/element.css">
     <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
+    <script src="../../js/element.js"></script>
     <title>待安装</title>
     <style>
       * {
         margin: 0;
       }
+      .navbarss{
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: #0090fa;
+
+} 
+.navbarss p{
+    color: #fff;
+} 
+a{
+text-decoration:none;
+-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+
+} 
+[v-cloak]{
+            display: none;
+        }
     </style>
   </head>
   <body style="height:100%;">
-    <div class="app">
+    <div class="app" v-cloak>
+        <div class="navbarss">
+            <p>
+                <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
+                    <use xlink:href="#iconfanhui"></use>
+                </svg>
+            </p>
+            <p>
+            </p>
+            <p></p>
+        </div>
       <div class="headerTitle">
             <svg class="icon iconfonts" aria-hidden="true">
                 <use xlink:href="#icondaianzhuang"></use>
@@ -42,7 +74,7 @@
                   <p class="time">2019.08.22 12:23:44</p>
                 </div>
                 <div class="iconImg">
-                  <svg class="icon iconfonts" aria-hidden="true">
+                  <svg class="icon iconfonts" aria-hidden="true" @click="golodisti">
                     <use xlink:href="#iconyoujiantou"></use>
                   </svg>
                 </div>
@@ -113,9 +145,9 @@
           </div>
         </div>
 
-        <!-- <div class="submitBtn">
-                    立即发货
-            </div> -->
+        <div class="submitBtn" @click="nowhuo">
+            确认安装
+          </div>
       </div>
     </div>
   </body>
@@ -152,9 +184,15 @@
         indexNum: 0,
         wuliu: true
       },
+      created(){
+            // window.location.href="./dingdan.html"
+      },
       methods: {
         btnOrder(index) {
           this.indexNum = index;
+        },
+        golodisti(){
+            window.location.href='./lodisticsInformation.html'
         },
         copy(age) {
           var _input = document.createElement("input");
@@ -163,7 +201,19 @@
           _input.select();
           document.execCommand("Copy");
           document.body.removeChild(_input);
-        }
+        },
+        comback(){
+          window.history.back(-1)
+        },
+        nowhuo(){
+          this.$message({
+              message: '确认成功',
+              type: 'success'
+          });
+          // setTimeout(()=>{
+          //   window.history.back(-1)
+          // },10)
+        },
       }
     });
   </script>

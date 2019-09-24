@@ -14,10 +14,40 @@
       * {
         margin: 0;
       }
+      .navbarss{
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: #0090fa;
+
+} 
+.navbarss p{
+    color: #fff;
+} 
+a{
+text-decoration:none;
+-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+
+} 
+[v-cloak]{
+            display: none;
+        }
     </style>
   </head>
   <body>
-    <div class="app">
+    <div class="app" v-cloak>
+        <div class="navbarss">
+            <p>
+                <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
+                    <use xlink:href="#iconfanhui"></use>
+                </svg>
+            </p>
+            <p>
+            </p>
+            <p></p>
+        </div>
       <div class="headerTitle">
         <svg class="icon iconfonts" aria-hidden="true">
           <use xlink:href="#iconshouhouyiwancheng"></use>
@@ -42,7 +72,7 @@
                   <p class="time">2019.08.22 12:23:44</p>
                 </div>
                 <div class="iconImg">
-                  <svg class="icon iconfonts" aria-hidden="true">
+                  <svg class="icon iconfonts" aria-hidden="true" @click="golodisti">
                     <use xlink:href="#iconyoujiantou"></use>
                   </svg>
                 </div>
@@ -120,7 +150,6 @@
       </div>
     </div>
   </body>
-  <script type="text/javascript" src="../../js/clipboard.js"></script>
   <script>
     var app = new Vue({
       el: ".app",
@@ -158,6 +187,9 @@
         btnOrder(index) {
           this.indexNum = index;
         },
+        golodisti(){
+            window.location.href='./lodisticsInformation.html'
+        },
         copy(age) {
           var _input = document.createElement("input");
           _input.value = age;
@@ -165,6 +197,9 @@
           _input.select();
           document.execCommand("Copy");
           document.body.removeChild(_input);
+        },
+        comback(){
+          window.history.back(-1)
         }
       }
     });

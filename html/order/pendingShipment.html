@@ -14,10 +14,38 @@
       * {
         margin: 0;
       }
+      .navbarss{
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: #0090fa;
+} 
+.navbarss p{
+    color: #fff;
+} 
+a{
+text-decoration:none;
+-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+} 
+[v-cloak]{
+            display: none;
+        }
     </style>
   </head>
   <body style="height:100%;">
-    <div class="app">
+    <div class="app" v-cloak>
+        <div class="navbarss">
+            <p>
+                <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
+                    <use xlink:href="#iconfanhui"></use>
+                </svg>
+            </p>
+            <p>
+            </p>
+            <p></p>
+        </div>
       <div class="headerTitle">
             <svg class="icon iconfonts" aria-hidden="true">
                     <use xlink:href="#icondaifahuo"></use>
@@ -42,7 +70,7 @@
                   <p class="time">2019.08.22 12:23:44</p>
                 </div>
                 <div class="iconImg">
-                  <svg class="icon iconfonts" aria-hidden="true">
+                  <svg class="icon iconfonts" aria-hidden="true" @click="golodisti">
                     <use xlink:href="#iconyoujiantou"></use>
                   </svg>
                 </div>
@@ -112,7 +140,7 @@
           </div>
         </div>
 
-        <div class="submitBtn">
+        <div class="submitBtn" @click="nowhuo">
           立即发货
         </div>
       </div>
@@ -151,8 +179,16 @@
         indexNum: 0,
         wuliu: true
       },
-      created() {},
+      created() {
+        
+      },
       methods: {
+        nowhuo(){
+          window.location.href = './shepment.html'
+        },
+        golodisti(){
+            window.location.href='./lodisticsInformation.html'
+        },
         btnOrder(index) {
           this.indexNum = index;
         },
@@ -163,7 +199,11 @@
           _input.select();
           document.execCommand("Copy");
           document.body.removeChild(_input);
+        },
+        comback(){
+          window.history.back(-1)
         }
+
       }
     });
   </script>

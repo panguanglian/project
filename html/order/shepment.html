@@ -8,17 +8,49 @@
     <link rel="stylesheet" href="../../css/order/orderDetails.css" />
     <link rel="stylesheet" href="../../css/order/shepment.css" />
     <link rel="stylesheet" href="../../css/iconFont/iconfont.css" />
+    <link rel="stylesheet" href="../../css/element.css">
     <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
+    <script src="../../js/element.js"></script>
     <title>发货</title>
     <style>
       * {
         margin: 0;
       }
+      .navbarss{
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: #0090fa;
+} 
+.navbarss p{
+    color: #fff;
+} 
+a{
+text-decoration:none;
+-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+} 
+[v-cloak]{
+            display: none;
+        }
     </style>
   </head>
   <body style="height:100%;">
-    <div class="app">
+    <div class="app" v-cloak>
+        <div class="navbarss">
+            <p>
+                <svg class="icon" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="comback">
+                    <use xlink:href="#iconfanhui"></use>
+                </svg>
+            </p>
+            
+            <p>
+                发货
+            </p>
+            <p></p>
+        </div>
       <div class="content">
         <div class="logisticsText">
           <div class="way">
@@ -70,7 +102,7 @@
           </p>
           <p class="fontSize">下单时间：1321313</p>
         </div>
-        <div class="submitBtn">
+        <div class="submitBtn" @click="queren">
           确认发货
         </div>
       </div>
@@ -111,6 +143,15 @@
       },
       created() {},
       methods: {
+        queren(){
+          this.$message({
+              message: '发货成功,3s之后自动返回',
+              type: 'success'
+          });
+          setTimeout(()=>{
+            window.history.back(-1)
+          },3010)
+        },
         btnOrder(index) {
           this.indexNum = index;
         },
@@ -121,6 +162,9 @@
           _input.select();
           document.execCommand("Copy");
           document.body.removeChild(_input);
+        },
+        comback(){
+          window.history.back(-1)
         }
       }
     });
