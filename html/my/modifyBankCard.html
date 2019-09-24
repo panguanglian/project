@@ -9,33 +9,15 @@
     <script src="../../js/vue.js"></script>
     <title>确认修改</title>
     <style>
-        .headFence {
-            background: #0090FA;
-            padding: 0.8rem;
-            text-align: center;
-            color: white;
-            line-height: 0.5rem;
-        }
         
-        .backtrack {
-            width: 2rem;
-            height: 2rem;
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: white;
-            text-align: center;
-            line-height: 2rem;
-            font-weight: bold;
-        }
     </style>
 </head>
 
 <body>
-    <div class="app">
+    <div class="app" v-cloak>
         <div class="headFence">修改银行卡</div>
         <div class="backtrack" @click='backtrack'>
-            <</div>
+            </div>
                 <div class="bankContent">
                     <div class="bankBox">
                         <span>持卡人</span>
