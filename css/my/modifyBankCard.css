@@ -37,3 +37,25 @@
     align-items: center;
     border-radius: 0.5rem;
 }
+.headFence {
+    background: #0090FA;
+    padding: 0.8rem;
+    text-align: center;
+    color: white;
+    line-height: 0.5rem;
+}
+
+.backtrack {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+    font-weight: bold;
+}
+[v-cloak]{
+    display: none;
+}
