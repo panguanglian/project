@@ -214,9 +214,21 @@
             show: false,
         },
         created() {
-
+            this.init()
         },
+        // mounted() {
+        //     this.init()
+        // },
         methods: {
+            init() {
+                console.log(window.location.search.split("id=")[1])
+                if (window.location.search.split("id=")[1] == undefined) {
+                    this.indexNum = 0
+                } else {
+
+                    this.indexNum = window.location.search.split("id=")[1]
+                }
+            },
             btnOrder(index) {
                 this.indexNum = index
                 if (index == 0) {
@@ -236,6 +248,7 @@
             backtrack() {
                 window.history.go(-1)
             },
+
         }
     })
 </script>
