@@ -17,8 +17,7 @@
             color: white;
             line-height: 0.5rem;
         }
-        
-        .backtrack {
+        /* .backtrack {
             width: 2rem;
             height: 2rem;
             position: absolute;
@@ -28,61 +27,72 @@
             text-align: center;
             line-height: 2rem;
             font-weight: bold;
+        } */
+        
+        .backtrack {
+            position: absolute;
+            top: 0.3rem;
+            left: 0;
         }
         
         a {
             text-decoration: none;
             color: black;
         }
+        
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div class="app">
+    <div class="app" v-cloak>
         <div class="headFence">信息中心</div>
-        <div class="backtrack" @click='backtrack'>
-            <</div>
-                <div class="message">
-                    <div class="without" :class='[info=="" ? "show" : "heid"]'>
-                        <div class="infoIcon">
-                            <svg class="icon" aria-hidden="true" style="width: 5rem;height:5rem;">
+        <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;  z-index: 333;" @click="backtrack">
+                <use xlink:href="#iconfanhui"></use>
+            </svg>
+        <div class="message">
+            <div class="without" :class='[info=="" ? "show" : "heid"]'>
+                <div class="infoIcon">
+                    <svg class="icon" aria-hidden="true" style="width: 5rem;height:5rem;">
                         <use xlink:href="#iconmeiyouxiaoxi"></use>
                     </svg>
-                        </div>
-                        <div>暂时没有任何消息</div>
-                    </div>
-                    <div class="infoBox" v-for='(item,index) in info'>
+                </div>
+                <div>暂时没有任何消息</div>
+            </div>
+            <div class="infoBox" v-for='(item,index) in info'>
 
-                        <div class="time">{{item.time}}</div>
-                        <a href="testCenter.html">
-                            <div class="info">
-                                <div class="infoTitle">{{item.title}}</div>
-                                <div class='infoContent'>
-                                    {{item.infoContent}}
-                                </div>
-                                <!-- <div class="infoImg"><img :src="item.infoImg" alt=""></div> -->
-                                <img :src="item.infoImg" alt="" class="infoImg">
-                            </div>
-                        </a>
+                <div class="time">{{item.time}}</div>
+                <a href="testCenter.html">
+                    <div class="info">
+                        <div class="infoTitle">{{item.title}}</div>
+                        <div class='infoContent'>
+                            {{item.infoContent}}
+                        </div>
+                        <!-- <div class="infoImg"><img :src="item.infoImg" alt=""></div> -->
+                        <img :src="item.infoImg" alt="" class="infoImg">
                     </div>
-                    <div class="infoBox" v-for='(item,index) in longTitle'>
-                        <div class="time">{{item.time}}</div>
-                        <a href="testCenter.html">
-                            <div class="info">
-                                <div class="infoTitle">{{item.title}}</div>
-                                <div class="particulars">查看详情
-                                    <div style="float: right">
-                                        <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;">
+                </a>
+            </div>
+            <div class="infoBox" v-for='(item,index) in longTitle'>
+                <div class="time">{{item.time}}</div>
+                <a href="testCenter.html">
+                    <div class="info">
+                        <div class="infoTitle">{{item.title}}</div>
+                        <div class="particulars">查看详情
+                            <div style="float: right">
+                                <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;">
                                 <use xlink:href="#iconyoujiantou"></use>
                             </svg>
-                                    </div>
-                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                </div>
-
+                </a>
+            </div>
         </div>
+
+    </div>
 </body>
 <script src="../../js/vue.js"></script>
 <script>

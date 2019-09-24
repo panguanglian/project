@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="../../css/my/aninvoice.css">
+    <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <title>发票详情</title>
@@ -13,11 +15,37 @@
         * {
             margin: 0;
         }
+        
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
+        
+        .backtrack {
+            position: absolute;
+            top: 0.3rem;
+            left: 0;
+        }
+        
+        .el-message {
+            min-width: 70%;
+        }
+        
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div class="app">
+    <div class="app" v-cloak>
+        <div class="headFence">开票</div>
+        <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;" @click="backtrack">
+                        <use xlink:href="#iconfanhui"></use>
+                    </svg>
         <div class="aninvoice">
             <div>
                 <div class="title">发票代码:</div>
@@ -29,7 +57,7 @@
             </div>
             <div>
                 <div class="title">发票金额:</div>
-                <div><input type="text" placeholder="¥ 请输入发票号码" v-model='money'></div>
+                <div><input type="text" placeholder="¥ 请输入发票金额" v-model='money'></div>
             </div>
         </div>
         <div class="invoiceBtn" @click='aninvoice'>
@@ -50,7 +78,23 @@
                 console.log(this.code)
                 console.log(this.num)
                 console.log(this.money)
-            }
+                if (this.code == '') {
+                    this.$message('请输入正确的发票代码');
+                } else if (this.num == '') {
+                    this.$message('请输入正确的发票号码');
+                } else if (this.money == '') {
+                    this.$message('请输入正确的发票金额');
+                } else {
+                    this.$notify({
+                        title: '成功',
+                        message: '开票成功',
+                        type: 'success'
+                    });
+                }
+            },
+            backtrack() {
+                window.history.go(-1)
+            },
         }
     })
 </script>

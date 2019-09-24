@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" style="height:100%;background: #ecebeb;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,81 +9,101 @@
     <link rel="stylesheet" href="../../css/order/orderDetails.css">
     <link rel="stylesheet" href="../../css/my/refund.css">
     <link rel="stylesheet" href="../../css/iconFont/iconfont.css">
-   
+
     <title>退货退款申请</title>
     <style>
-                 
+        .headFence {
+            background: #0090FA;
+            padding: 0.8rem;
+            text-align: center;
+            color: white;
+            line-height: 0.5rem;
+        }
+        
+        .backtrack {
+            position: absolute;
+            top: 0.3rem;
+            left: 0;
+        }
+        
+        [v-cloak] {
+            display: none;
+        }
     </style>
 </head>
+
 <body style="height:100%;">
-    <div class="app">
-        <div class="headerTitle">
-                <svg class="icon iconfonts" aria-hidden="true">
-                    <use xlink:href="#icontuikuantuihuoshenqing" ></use>
+    <div class="app" v-cloak>
+        <div class="headFence"></div>
+        <svg class="icon backtrack" aria-hidden="true" style="height: 1.5rem;width:1.5rem;  z-index: 333;" @click="backtrack">
+                    <use xlink:href="#iconfanhui"></use>
                 </svg>
-            退款退货申请
+        <div class="headerTitle">
+            <svg class="icon iconfonts" aria-hidden="true">
+                    <use xlink:href="#icontuikuantuihuoshenqing" ></use>
+                </svg> 退款退货申请
             <div class="boxthite"></div>
         </div>
-        
-        <div class="content" >
+
+        <div class="content">
             <div class="cneterBox">
                 <div class="functions">
-                        <span>订单编号：</span>
-                        <p class="dingdan">6154235415654875</p>
-                        <span class="checkeds">查看订单</span>
+                    <span>订单编号：</span>
+                    <p class="dingdan">6154235415654875</p>
+                    <span class="checkeds">查看订单</span>
                 </div>
                 <div class="functions">
                     <span>订单状态：</span>
                     <p class="dingdannum">已完成</p>
                 </div>
-                
-            </div>
-            
 
-            <div class="content-neirong" >
-                    <div class="functions">
-                        <span>售后类型：</span>
-                        <p class="dingdannum">仅退款</p>
+            </div>
+
+
+            <div class="content-neirong">
+                <div class="functions">
+                    <span>售后类型：</span>
+                    <p class="dingdannum">仅退款</p>
+                </div>
+                <div class="functions">
+                    <span>申请时间：</span>
+                    <p class="dingdannum">2019.08.22 12:25:32</p>
+                </div>
+                <div class="functions">
+                    <span>退款金额：</span>
+                    <p class="dingdannum">¥5421.00</p>
+                </div>
+                <div class="functions">
+                    <span>售后原因：</span>
+                    <p class="dingdannum">机器出现了故障问题，进水的时候会出现机器出现了故障问题，进水的时候会出现机</p>
+                </div>
+                <div class="functions">
+                    <span>图片说明：</span>
+                    <div class="dingdannum">
+                        <div class="imgbox">
+                            <img src="../../image/daffodil.jpg" alt="">
+                        </div>
                     </div>
-                    <div class="functions">
-                            <span>申请时间：</span>
-                            <p class="dingdannum">2019.08.22 12:25:32</p>
-                    </div>
-                    <div class="functions">
-                            <span>退款金额：</span>
-                            <p class="dingdannum">¥5421.00</p>
-                    </div>
-                    <div class="functions">
-                            <span>售后原因：</span>
-                            <p class="dingdannum">机器出现了故障问题，进水的时候会出现机器出现了故障问题，进水的时候会出现机</p>
-                    </div>
-                    <div class="functions">
-                            <span>图片说明：</span>
-                            <div class="dingdannum">
-                                <div class="imgbox">
-                                    <img src="../../image/daffodil.jpg" alt="">
-                                </div>
-                            </div>
-                    </div>
+                </div>
             </div>
 
             <div class="submitBtn" @click="ok">
-                    完成售后
+                完成售后
             </div>
 
         </div>
         <div class="modell" v-if="show">
-                <div class="modellbox">
-                    <p>是否确定已经完成售后？</p>
-                    <div>
-                        <div @click="show=false">
-                            否
-                        </div>
-                        <div @click="show=false">
-                            是
-                        </div>
+            <div class="modellbox">
+                <p>是否确定已经完成售后？</p>
+                <div>
+                    <div @click="show=false">
+                        否
+                    </div>
+                    <div @click="show=false">
+                        是
                     </div>
                 </div>
+            </div>
         </div>
 
     </div>
@@ -91,19 +112,23 @@
 <script src="../../js/iconfont.js"></script>
 <script>
     var app = new Vue({
-        el:'.app',
-        data:{
-            show:false,
+        el: '.app',
+        data: {
+            show: false,
         },
-        created(){
+        created() {
 
         },
-        methods:{
-            ok(){
-                this.show=true
-            }
-           
+        methods: {
+            ok() {
+                this.show = true
+            },
+            backtrack() {
+                window.history.go(-1)
+            },
+
         }
     })
 </script>
+
 </html>
