@@ -38,6 +38,14 @@
         [v-cloak] {
             display: none;
         }
+        
+        .el-message-box {
+            width: 70%;
+        }
+        
+        .el-message {
+            min-width: 70%;
+        }
     </style>
 </head>
 
@@ -90,7 +98,7 @@
                                     <div class="reserveTime">
                                         <div style="flex: 2;">2019.08.22 12:25:32</div>
                                         <div style="flex: 1;">
-                                            <div class="check">售后完成</div>
+                                            <div class="check" @click="open4(index)">售后完成</div>
                                         </div>
                                     </div>
                                 </div>
@@ -246,6 +254,45 @@
             backtrack() {
                 window.history.go(-1)
             },
+
+            open4(index) {
+                const h = this.$createElement;
+                this.$msgbox({
+                    title: '消息',
+                    message: h('p', null, [
+                        h('span', null, '是否确定完成'),
+                        h('i', {
+                            style: 'color: teal'
+                        }, '')
+                    ]),
+                    showCancelButton: true,
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    beforeClose: (action, instance, done) => {
+                        if (action === 'confirm') {
+                            instance.confirmButtonLoading = true;
+                            instance.confirmButtonText = '执行中...';
+                            setTimeout(() => {
+                                done();
+                                setTimeout(() => {
+                                    instance.confirmButtonLoading = false;
+                                }, 300);
+                            }, 3000);
+                        } else {
+                            done();
+                        }
+                    }
+                }).then(action => {
+                    this.$message({
+                        type: 'success',
+                        message: '执行成功'
+                    });
+                    console.log(this.underway[index])
+                    this.already.unshift(this.underway[index])
+                    this.underway.splice(index, 1)
+
+                });
+            }
         }
     })
 </script>

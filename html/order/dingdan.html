@@ -239,13 +239,24 @@
             indexNum: 0,
             confirms: false,
         },
-        created(){
-            this.arrlist=this.shopAll
 
-            // window.location.href="./pendinginstallation.html"
+        created() {
+            this.arrlist = this.shopAll
+            this.init()
         },
+        // mounted() {
+        //     this.init()
+        // },
         methods: {
-            // 切换订单选项
+            init() {
+                console.log(window.location.search.split("id=")[1])
+                if (window.location.search.split("id=")[1] == undefined) {
+                    this.indexNum = 0
+                } else {
+
+                    this.indexNum = window.location.search.split("id=")[1]
+                }
+            },
             btnOrder(index) {
                 this.indexNum = index
                 if (index == 0) {
@@ -278,6 +289,7 @@
             backtrack() {
                 window.history.go(-1)
             },
+
         }
     })
 </script>
